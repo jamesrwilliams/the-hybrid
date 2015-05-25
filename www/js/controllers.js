@@ -33,6 +33,12 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('MapCtrl',function($scope, $ionicModal, $timeout){
+	
+	initialise();
+	
+})
+
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
