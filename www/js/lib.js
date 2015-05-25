@@ -23,12 +23,13 @@
  * ========================================================================================================================                                                                                                           
  */
  
+
 var test_lat = 51.887761;
 var test_lng = -2.088182;
 
 var zombie = "#4e8c03";
 
-var map, i;
+var map, i, output;
 
 var test_marker;
 
@@ -51,7 +52,6 @@ function drawHex(width, lat, lng){
 	return output;
 	
 }
-
 
 
 var game = new Object();
@@ -94,7 +94,7 @@ function isOdd(n){
 
 function locationError(){
 	
-	console.log("Geolocation Fetch Fail");
+	output.innerHTML = output.innerHTML + "<p>Geolocation Fetch Fail</p>";
 	
 }
 
@@ -115,7 +115,7 @@ function drawFences(origin_lat, origin_lng){
 	
 	// Global HEX settings
 	var strokeColour = "#48d1af";
-	var strokeWeight = 2.5;
+	var strokeWeight = 3;
 	var strokeOpacity = 0.1;
 	
 	var fillColour = "#FFFFFF";
@@ -166,7 +166,7 @@ var locationSuccess = function(position) {
 		title: 'You',
 		click: function(e) {
 			
-			alert('You clicked in this marker');
+			output.innerHTML = output.innerHTML + "<p>This is your location</p>";
 		
 		}
 	});
@@ -178,7 +178,7 @@ var locationSuccess = function(position) {
 		title: "Test",
 		click: function(e){
 		
-			alert("This is the Test Marker");	
+			output.innerHTML = output.innerHTML + "<p>This is the Test Marker </p>";	
 			
 		}	
 		
@@ -203,8 +203,8 @@ var locationSuccess = function(position) {
 		
 	}
 	
-	console.log("Markers in: " + active_counter + " of " + polygons.length + " grids."); 	
-
+	output.innerHTML = output.innerHTML + "<p>Markers in: " + active_counter + " of " + polygons.length + " grids. <br /></p>";
+ 
 };
 
 function init_geo(){
@@ -216,6 +216,8 @@ function init_geo(){
 }
 
 function initialise(){
+	
+	output = document.getElementById("output");
 	
 	if("geolocation" in navigator) {
 	

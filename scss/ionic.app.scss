@@ -16,8 +16,48 @@ $dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "./lib/ionic/fonts" !default;
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+body {
+	
+	font-size: 14px;
+	color: #444;
+	
+}
+
+.scroll {
+	
+	position: relative;
+	background: #ccc;
+	min-height: 100%;
+}
+
+#output {
+	
+	position: fixed;
+	right: 20px;
+	bottom: 40px;
+	left: 20px;
+	
+}
+
+.content > .scroll {
+  height: 100%;
+}
+.content > .scroll > #map-canvas {
+  height: 100%;
+}
+#map-canvas {
+	
+	padding: 20px;
+	margin-top: -20px;
+	position: absolute;
+	top:0;
+	bottom: 20px;
+	width: 100%;
+	
+}
 
 // Include all of Ionic
-@import "www/lib/ionic/scss/ionic";
+@import "../www/lib/ionic/scss/ionic";
 
