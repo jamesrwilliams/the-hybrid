@@ -33,6 +33,81 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('AJAXCtrl', function($scope, $http) {
+	
+	$scope.doRefresh = function(){
+	
+		$http.get('http://www.the-hybrid.co.uk/api.php?request=get_lore_posts').then(function(resp) {
+	
+			console.log('Success', resp);
+			// For JSON responses, resp.data contains the result
+	
+			drawLore(resp.data);
+	
+		}, function(err) {
+			
+			console.log('ERR', err);
+			// err.status will contain the status code
+			
+		})
+	
+		$scope.$broadcast('scroll.refreshComplete');
+		
+	}
+	
+
+})
+
+.controller('LoginCtrl', function($scope, $http){
+	
+ $scope.data = {}
+  
+  $scope.showPopup = function($scope, transformRequestAsFormPost) {	 
+	  
+	$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded"; 
+	
+	var password = "d55194bead47cbdd71591b73f6465e53"
+	var username = "admin@the-hybrid.co.uk";
+	
+	var _password = encodeURIComponent(password);
+	var _username = encodeURIComponent(username);
+
+	// console.log(_password);
+	// console.log(_username);
+	
+	$http({
+	
+		method: 'POST',
+		url: 'http://www.the-hybrid.co.uk/api.php',
+		data: $.param({request: "get_user_data", username:_username, password: _password}),
+		headers: {'Content-Type':'application/x-www-form-urlencoded'}
+		
+	})
+	.success(function(dataFromServer, status, headers, config){
+		
+		console.log(config.data); 
+		console.warn(dataFromServer);
+	
+	});
+	$http({
+	
+		method: 'POST',
+		url: 'http://www.jamesrwilliams.co.uk/hybrid/api.php',
+		data: $.param({request: "user_data", username:_username, password: _password}),
+		headers: {'Content-Type':'application/x-www-form-urlencoded'}
+			
+	})
+	.success(function(dataFromServer, status, headers, config){
+		
+		//console.log(config.data); 
+		console.log("James' " + dataFromServer);
+	
+	});
+   
+  };
+  
+})
+
 .controller('MapCtrl',function($scope, $ionicModal, $timeout){
 	
 	initialise();

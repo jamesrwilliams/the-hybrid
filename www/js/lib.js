@@ -7,6 +7,81 @@
  * 25/05/15
  *
  */
+ 
+ function login(){
+	 
+	 console.log("Login Started");
+	 
+	 var _user = $(".login #username").val();
+	 var _pass = $(".login #password").val();
+	 
+	console.log("Username: " +  _user);
+	console.log("Password: " +  $.md5(_pass));
+	
+	// WRITE TO LS
+ 	 
+ }
+ 
+ function drawLore(data){
+		
+	console.log(data);	
+		
+	$.each(data, function(i, value){
+		
+		$("#lore_output").append("<a class='item'><h2>" + value.title + "</h2><p>" + value.text + "</p>");
+		
+	});
+	 
+ }
+
+function getLoreData(){
+	
+	$("#lore_output").text("Fetching Data");
+	
+	var request = new XMLHttpRequest();
+	request.open('GET', 'http://www.the-hybrid.co.uk/api.php?request=get_lore_posts', true);
+
+	request.onload = function() {
+	if (request.status >= 200 && request.status < 400) {
+    
+    	// Success!
+		var data = JSON.parse(request.responseText);
+    
+		console.log(data);
+		
+		setData(data);
+	
+	} else {
+	
+		$("#lore_output").text("Error Fetching Data");
+	
+	}
+
+};
+
+request.onerror = function() {
+
+	$("#lore_output").text("Error Connecting To Server");
+
+};
+
+request.send();
+	
+}
+
+function setData(input_data){
+	
+	$(document).ready(function(){
+		
+		
+		
+		$("#lore_output").text(input_data);
+		
+	});
+	
+}
+ 
+
 
 /* 
  * ========================================================================================================================	
@@ -76,10 +151,7 @@ game.style.grid.fillOpactiy = 0.5;
 game.style.active.fillColor = "#48d1af";
 game.style.active.fillOpacity = 0.1;
 
-console.log(game);
 var json_data = JSON.stringify(game);
-
-console.log(json_data);
 
 function isNumber(n){
    return n == parseFloat(n);

@@ -17,11 +17,44 @@ $dark:                            #444 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
+// Include all of Ionic
+@import "../www/lib/ionic/scss/ionic";
 
 body {
 	
 	font-size: 14px;
 	color: #444;
+	
+}
+
+.player {
+	
+	height: 100%;
+	width: auto;
+	
+	.box {
+	
+		height: 200px;
+	
+	}
+	
+	.box1 {
+		
+		background: yellow;
+		
+	}
+	
+	.box2 {
+		
+		background: red;
+		
+	}
+
+	.box3 {
+		
+		background: blue;
+		
+	}
 	
 }
 
@@ -38,6 +71,27 @@ body {
 	right: 20px;
 	bottom: 40px;
 	left: 20px;
+	
+}
+
+.about {
+	
+	.scroll {
+		
+		color: white;
+		background: url(../img/hero.jpg);
+		background-position: center center;
+		background-size: cover;
+		
+		
+	}
+	
+}
+
+
+.list {
+	
+	margin-bottom: 0;
 	
 }
 
@@ -58,6 +112,56 @@ body {
 	
 }
 
-// Include all of Ionic
-@import "../www/lib/ionic/scss/ionic";
+img {
+	
+	width: 100%;
+	height: auto;
+	
+}
+
+.spinner > div {
+  background-color: #333;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
 
