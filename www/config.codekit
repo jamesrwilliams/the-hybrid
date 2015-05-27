@@ -2,682 +2,425 @@
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
 "creatorBuild": "19022",
 "files": {
-	"\/bower.json": {
-		"fileType": 524288,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/bower.json",
-		"orderOutput": 0,
-		"outputAbbreviatedPath": "\/bower-min.json",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1
-		},
-	"\/gulpfile.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/gulpfile.js",
-		"outputAbbreviatedPath": "\/min\/gulpfile-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/hooks\/after_prepare\/010_add_platform_class.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/hooks\/after_prepare\/010_add_platform_class.js",
-		"outputAbbreviatedPath": "\/hooks\/after_prepare\/min\/010_add_platform_class-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/hooks\/README.md": {
-		"criticStyle": 0,
-		"enableFootnotes": 1,
-		"enableLabels": 1,
-		"enableSmartQuotes": 1,
-		"escapeLineBreaks": 0,
-		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/hooks\/README.md",
-		"maskEmailAddresses": 1,
-		"outputAbbreviatedPath": "\/hooks\/README.html",
-		"outputFormat": 0,
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"parseMetadata": 1,
-		"processHTML": 0,
-		"randomFootnoteNumbers": 0,
-		"useCompatibilityMode": 0
-		},
-	"\/icon.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 60261,
-		"inputAbbreviatedPath": "\/icon.png",
-		"outputAbbreviatedPath": "\/icon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/package.json": {
-		"fileType": 524288,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/package.json",
-		"orderOutput": 0,
-		"outputAbbreviatedPath": "\/package-min.json",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1
-		},
-	"\/res\/ios\/Icon-60@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 34453,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-60@2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-60@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-60@3x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 36163,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-60@3x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-60@3x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-72.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 32228,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-72.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-72.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-72@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 35819,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-72@2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-72@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-76.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 32379,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-76.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-76.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-76@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 35713,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-76@2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-76@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-Small-40.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 29976,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-Small-40.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-Small-40.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-Small-40@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 32526,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-Small-40@2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-Small-40@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-Small-40@3x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 34454,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-Small-40@3x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-Small-40@3x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-Small-50.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 30735,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-Small-50.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-Small-50.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-Small-50@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 33570,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-Small-50@2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-Small-50@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-Small.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 29260,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-Small.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-Small.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-Small@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 31170,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-Small@2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-Small@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon-Small@3x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 32831,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon-Small@3x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon-Small@3x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/Icon@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 34365,
-		"inputAbbreviatedPath": "\/res\/ios\/Icon@2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/Icon@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/iTunesArtwork@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 63946,
-		"inputAbbreviatedPath": "\/res\/ios\/iTunesArtwork@2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/iTunesArtwork@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/splash_iphone3.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 15551,
-		"inputAbbreviatedPath": "\/res\/ios\/splash_iphone3.png",
-		"outputAbbreviatedPath": "\/res\/ios\/splash_iphone3.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/splash_iphone4-2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 32247,
-		"inputAbbreviatedPath": "\/res\/ios\/splash_iphone4-2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/splash_iphone4-2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/splash_iphone5-2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 37955,
-		"inputAbbreviatedPath": "\/res\/ios\/splash_iphone5-2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/splash_iphone5-2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/res\/ios\/splash_iphone6-2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 45662,
-		"inputAbbreviatedPath": "\/res\/ios\/splash_iphone6-2x.png",
-		"outputAbbreviatedPath": "\/res\/ios\/splash_iphone6-2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/scss\/ionic.app.scss": {
-		"createSourceMap": 0,
-		"debugStyle": 0,
-		"decimalPrecision": 10,
-		"fileType": 4,
-		"ignore": 0,
-		"ignoreWasSetByUser": 1,
-		"inputAbbreviatedPath": "\/scss\/ionic.app.scss",
-		"outputAbbreviatedPath": "\/www\/css\/ionic.app.css",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
-		"outputStyle": 1,
-		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"useLibsass": 0
-		},
-	"\/www\/css\/ionic.app.css": {
+	"\/css\/ionic.app.css": {
 		"fileType": 16,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/css\/ionic.app.css",
+		"inputAbbreviatedPath": "\/css\/ionic.app.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/img\/hero.jpg": {
+	"\/img\/hero.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 299957,
-		"inputAbbreviatedPath": "\/www\/img\/hero.jpg",
-		"outputAbbreviatedPath": "\/www\/img\/hero.jpg",
+		"inputAbbreviatedPath": "\/img\/hero.jpg",
+		"outputAbbreviatedPath": "\/img\/hero.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/www\/img\/ionic.png": {
+	"\/img\/ionic.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 4757,
-		"inputAbbreviatedPath": "\/www\/img\/ionic.png",
-		"outputAbbreviatedPath": "\/www\/img\/ionic.png",
+		"inputAbbreviatedPath": "\/img\/ionic.png",
+		"outputAbbreviatedPath": "\/img\/ionic.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/www\/img\/KiwiKiwi - Logo.png": {
+	"\/img\/james.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 286517,
+		"inputAbbreviatedPath": "\/img\/james.png",
+		"outputAbbreviatedPath": "\/img\/james.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/John-Evans.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 136851,
+		"inputAbbreviatedPath": "\/img\/John-Evans.jpg",
+		"outputAbbreviatedPath": "\/img\/John-Evans.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/KiwiKiwi - Logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 264093,
-		"inputAbbreviatedPath": "\/www\/img\/KiwiKiwi - Logo.png",
-		"outputAbbreviatedPath": "\/www\/img\/KiwiKiwi - Logo.png",
+		"inputAbbreviatedPath": "\/img\/KiwiKiwi - Logo.png",
+		"outputAbbreviatedPath": "\/img\/KiwiKiwi - Logo.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/www\/index.html": {
+	"\/img\/michael-faraday.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 38051,
+		"inputAbbreviatedPath": "\/img\/michael-faraday.jpg",
+		"outputAbbreviatedPath": "\/img\/michael-faraday.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/mike-pascoe.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 48468,
+		"inputAbbreviatedPath": "\/img\/mike-pascoe.jpg",
+		"outputAbbreviatedPath": "\/img\/mike-pascoe.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/paul.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 190355,
+		"inputAbbreviatedPath": "\/img\/paul.png",
+		"outputAbbreviatedPath": "\/img\/paul.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/index.html",
+		"inputAbbreviatedPath": "\/index.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/js\/app.js": {
+	"\/js\/app.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/js\/app.js",
-		"outputAbbreviatedPath": "\/www\/js\/min\/app-min.js",
+		"inputAbbreviatedPath": "\/js\/app.js",
+		"outputAbbreviatedPath": "\/js\/min\/app-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/js\/controllers.js": {
+	"\/js\/controllers.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/js\/controllers.js",
-		"outputAbbreviatedPath": "\/www\/js\/min\/controllers-min.js",
+		"inputAbbreviatedPath": "\/js\/controllers.js",
+		"outputAbbreviatedPath": "\/js\/min\/controllers-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/js\/jquery-2.1.4.min.js": {
+	"\/js\/jquery-2.1.4.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/js\/jquery-2.1.4.min.js",
-		"outputAbbreviatedPath": "\/www\/js\/min\/jquery-2.1.4.min-min.js",
+		"inputAbbreviatedPath": "\/js\/jquery-2.1.4.min.js",
+		"outputAbbreviatedPath": "\/js\/min\/jquery-2.1.4.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/js\/jquery.md5.js": {
+	"\/js\/jquery.md5.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/js\/jquery.md5.js",
-		"outputAbbreviatedPath": "\/www\/js\/min\/jquery.md5-min.js",
+		"inputAbbreviatedPath": "\/js\/jquery.md5.js",
+		"outputAbbreviatedPath": "\/js\/min\/jquery.md5-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/js\/lib.js": {
+	"\/js\/lib.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/js\/lib.js",
-		"outputAbbreviatedPath": "\/www\/js\/min\/lib-min.js",
+		"inputAbbreviatedPath": "\/js\/lib.js",
+		"outputAbbreviatedPath": "\/js\/min\/lib-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/js\/min\/app-min.js": {
+	"\/js\/min\/app-min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/js\/min\/app-min.js",
-		"outputAbbreviatedPath": "\/www\/js\/min\/min\/app-min-min.js",
+		"inputAbbreviatedPath": "\/js\/min\/app-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/app-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/js\/min\/controllers-min.js": {
+	"\/js\/min\/controllers-min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/js\/min\/controllers-min.js",
-		"outputAbbreviatedPath": "\/www\/js\/min\/min\/controllers-min-min.js",
+		"inputAbbreviatedPath": "\/js\/min\/controllers-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/controllers-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/js\/min\/gmaps.min.js": {
+	"\/js\/min\/gmaps.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/js\/min\/gmaps.min.js",
-		"outputAbbreviatedPath": "\/www\/js\/min\/min\/gmaps.min-min.js",
+		"inputAbbreviatedPath": "\/js\/min\/gmaps.min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/gmaps.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/js\/min\/lib-min.js": {
+	"\/js\/min\/lib-min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/js\/min\/lib-min.js",
-		"outputAbbreviatedPath": "\/www\/js\/min\/min\/lib-min-min.js",
+		"inputAbbreviatedPath": "\/js\/min\/lib-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/lib-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/css\/ionic.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/css\/ionic.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/www\/lib\/ionic\/css\/ionic.min.css": {
+	"\/lib\/ionic\/css\/ionic.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/css\/ionic.min.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/css\/ionic.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/lib\/ionic\/js\/angular-ui\/angular-ui-router.js": {
+	"\/lib\/ionic\/css\/ionic.min.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/ionic\/css\/ionic.min.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/lib\/ionic\/js\/angular-ui\/angular-ui-router.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular-ui\/angular-ui-router.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular-ui\/min\/angular-ui-router-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/angular-ui\/angular-ui-router.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/angular-ui\/min\/angular-ui-router-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/angular-ui\/angular-ui-router.min.js": {
+	"\/lib\/ionic\/js\/angular-ui\/angular-ui-router.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular-ui\/angular-ui-router.min.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular-ui\/min\/angular-ui-router.min-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/angular-ui\/angular-ui-router.min.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/angular-ui\/min\/angular-ui-router.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/angular\/angular-animate.js": {
+	"\/lib\/ionic\/js\/angular\/angular-animate.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/angular-animate.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/min\/angular-animate-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/angular-animate.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/min\/angular-animate-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/angular\/angular-animate.min.js": {
+	"\/lib\/ionic\/js\/angular\/angular-animate.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/angular-animate.min.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/min\/angular-animate.min-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/angular-animate.min.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/min\/angular-animate.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/angular\/angular-resource.js": {
+	"\/lib\/ionic\/js\/angular\/angular-resource.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/angular-resource.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/min\/angular-resource-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/angular-resource.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/min\/angular-resource-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/angular\/angular-resource.min.js": {
+	"\/lib\/ionic\/js\/angular\/angular-resource.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/angular-resource.min.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/min\/angular-resource.min-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/angular-resource.min.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/min\/angular-resource.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/angular\/angular-sanitize.js": {
+	"\/lib\/ionic\/js\/angular\/angular-sanitize.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/angular-sanitize.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/min\/angular-sanitize-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/angular-sanitize.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/min\/angular-sanitize-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/angular\/angular-sanitize.min.js": {
+	"\/lib\/ionic\/js\/angular\/angular-sanitize.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/angular-sanitize.min.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/min\/angular-sanitize.min-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/angular-sanitize.min.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/min\/angular-sanitize.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/angular\/angular.js": {
+	"\/lib\/ionic\/js\/angular\/angular.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/angular.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/min\/angular-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/angular.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/min\/angular-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/angular\/angular.min.js": {
+	"\/lib\/ionic\/js\/angular\/angular.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/angular.min.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/angular\/min\/angular.min-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/angular.min.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/angular\/min\/angular.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/app.js": {
+	"\/lib\/ionic\/js\/app.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/app.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/min\/app-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/app.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/min\/app-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/ionic-angular.js": {
+	"\/lib\/ionic\/js\/ionic-angular.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/ionic-angular.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/min\/ionic-angular-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/ionic-angular.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/min\/ionic-angular-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/ionic-angular.min.js": {
+	"\/lib\/ionic\/js\/ionic-angular.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/ionic-angular.min.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/min\/ionic-angular.min-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/ionic-angular.min.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/min\/ionic-angular.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/ionic.bundle.js": {
+	"\/lib\/ionic\/js\/ionic.bundle.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/ionic.bundle.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/min\/ionic.bundle-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/ionic.bundle.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/min\/ionic.bundle-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/ionic.bundle.min.js": {
+	"\/lib\/ionic\/js\/ionic.bundle.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/ionic.bundle.min.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/min\/ionic.bundle.min-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/ionic.bundle.min.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/min\/ionic.bundle.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/ionic.js": {
+	"\/lib\/ionic\/js\/ionic.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/ionic.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/min\/ionic-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/ionic.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/min\/ionic-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/js\/ionic.min.js": {
+	"\/lib\/ionic\/js\/ionic.min.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/js\/ionic.min.js",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/js\/min\/ionic.min-min.js",
+		"inputAbbreviatedPath": "\/lib\/ionic\/js\/ionic.min.js",
+		"outputAbbreviatedPath": "\/lib\/ionic\/js\/min\/ionic.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/www\/lib\/ionic\/scss\/_action-sheet.scss": {
+	"\/lib\/ionic\/scss\/_action-sheet.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_action-sheet.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_action-sheet.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_action-sheet.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_action-sheet.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -685,15 +428,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_animations.scss": {
+	"\/lib\/ionic\/scss\/_animations.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_animations.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_animations.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_animations.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_animations.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -701,15 +444,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_backdrop.scss": {
+	"\/lib\/ionic\/scss\/_backdrop.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_backdrop.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_backdrop.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_backdrop.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_backdrop.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -717,15 +460,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_badge.scss": {
+	"\/lib\/ionic\/scss\/_badge.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_badge.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_badge.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_badge.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_badge.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -733,15 +476,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_bar.scss": {
+	"\/lib\/ionic\/scss\/_bar.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_bar.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_bar.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_bar.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_bar.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -749,15 +492,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_button-bar.scss": {
+	"\/lib\/ionic\/scss\/_button-bar.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_button-bar.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_button-bar.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_button-bar.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_button-bar.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -765,15 +508,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_button.scss": {
+	"\/lib\/ionic\/scss\/_button.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_button.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_button.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_button.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_button.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -781,15 +524,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_checkbox.scss": {
+	"\/lib\/ionic\/scss\/_checkbox.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_checkbox.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_checkbox.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_checkbox.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_checkbox.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -797,15 +540,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_form.scss": {
+	"\/lib\/ionic\/scss\/_form.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_form.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_form.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_form.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_form.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -813,15 +556,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_grid.scss": {
+	"\/lib\/ionic\/scss\/_grid.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_grid.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_grid.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_grid.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_grid.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -829,15 +572,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_ionic.scss": {
+	"\/lib\/ionic\/scss\/_ionic.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_ionic.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_ionic.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_ionic.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_ionic.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -845,15 +588,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_items.scss": {
+	"\/lib\/ionic\/scss\/_items.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_items.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_items.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_items.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_items.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -861,15 +604,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_list.scss": {
+	"\/lib\/ionic\/scss\/_list.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_list.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_list.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_list.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_list.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -877,15 +620,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_loading.scss": {
+	"\/lib\/ionic\/scss\/_loading.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_loading.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_loading.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_loading.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_loading.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -893,15 +636,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_menu.scss": {
+	"\/lib\/ionic\/scss\/_menu.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_menu.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_menu.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_menu.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_menu.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -909,15 +652,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_mixins.scss": {
+	"\/lib\/ionic\/scss\/_mixins.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_mixins.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_mixins.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_mixins.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_mixins.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -925,15 +668,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_modal.scss": {
+	"\/lib\/ionic\/scss\/_modal.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_modal.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_modal.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_modal.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_modal.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -941,15 +684,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_platform.scss": {
+	"\/lib\/ionic\/scss\/_platform.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_platform.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_platform.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_platform.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_platform.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -957,15 +700,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_popover.scss": {
+	"\/lib\/ionic\/scss\/_popover.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_popover.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_popover.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_popover.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_popover.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -973,15 +716,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_popup.scss": {
+	"\/lib\/ionic\/scss\/_popup.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_popup.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_popup.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_popup.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_popup.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -989,15 +732,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_progress.scss": {
+	"\/lib\/ionic\/scss\/_progress.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_progress.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_progress.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_progress.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_progress.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1005,15 +748,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_radio.scss": {
+	"\/lib\/ionic\/scss\/_radio.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_radio.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_radio.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_radio.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_radio.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1021,15 +764,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_range.scss": {
+	"\/lib\/ionic\/scss\/_range.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_range.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_range.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_range.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_range.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1037,15 +780,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_refresher.scss": {
+	"\/lib\/ionic\/scss\/_refresher.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_refresher.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_refresher.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_refresher.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_refresher.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1053,15 +796,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_reset.scss": {
+	"\/lib\/ionic\/scss\/_reset.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_reset.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_reset.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_reset.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_reset.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1069,15 +812,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_scaffolding.scss": {
+	"\/lib\/ionic\/scss\/_scaffolding.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_scaffolding.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_scaffolding.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_scaffolding.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_scaffolding.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1085,15 +828,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_select.scss": {
+	"\/lib\/ionic\/scss\/_select.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_select.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_select.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_select.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_select.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1101,15 +844,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_slide-box.scss": {
+	"\/lib\/ionic\/scss\/_slide-box.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_slide-box.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_slide-box.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_slide-box.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_slide-box.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1117,15 +860,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_spinner.scss": {
+	"\/lib\/ionic\/scss\/_spinner.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_spinner.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_spinner.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_spinner.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_spinner.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1133,15 +876,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_tabs.scss": {
+	"\/lib\/ionic\/scss\/_tabs.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_tabs.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_tabs.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_tabs.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_tabs.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1149,15 +892,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_toggle.scss": {
+	"\/lib\/ionic\/scss\/_toggle.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_toggle.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_toggle.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_toggle.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_toggle.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1165,15 +908,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_transitions.scss": {
+	"\/lib\/ionic\/scss\/_transitions.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_transitions.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_transitions.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_transitions.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_transitions.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1181,15 +924,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_type.scss": {
+	"\/lib\/ionic\/scss\/_type.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_type.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_type.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_type.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_type.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1197,15 +940,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_util.scss": {
+	"\/lib\/ionic\/scss\/_util.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_util.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_util.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_util.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_util.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1213,15 +956,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/_variables.scss": {
+	"\/lib\/ionic\/scss\/_variables.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/_variables.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/css\/_variables.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/_variables.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/css\/_variables.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1229,15 +972,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/ionicons\/_ionicons-font.scss": {
+	"\/lib\/ionic\/scss\/ionicons\/_ionicons-font.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/ionicons\/_ionicons-font.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/css\/_ionicons-font.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/ionicons\/_ionicons-font.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/scss\/css\/_ionicons-font.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1245,15 +988,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/ionicons\/_ionicons-icons.scss": {
+	"\/lib\/ionic\/scss\/ionicons\/_ionicons-icons.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/ionicons\/_ionicons-icons.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/css\/_ionicons-icons.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/ionicons\/_ionicons-icons.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/scss\/css\/_ionicons-icons.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1261,15 +1004,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/ionicons\/_ionicons-variables.scss": {
+	"\/lib\/ionic\/scss\/ionicons\/_ionicons-variables.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/ionicons\/_ionicons-variables.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/css\/_ionicons-variables.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/ionicons\/_ionicons-variables.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/scss\/css\/_ionicons-variables.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1277,15 +1020,15 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/scss\/ionicons\/ionicons.scss": {
+	"\/lib\/ionic\/scss\/ionicons\/ionicons.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/ionicons\/ionicons.scss",
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/scss\/css\/ionicons.css",
+		"inputAbbreviatedPath": "\/lib\/ionic\/scss\/ionicons\/ionicons.scss",
+		"outputAbbreviatedPath": "\/lib\/ionic\/scss\/css\/ionicons.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -1293,121 +1036,121 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/www\/lib\/ionic\/version.json": {
+	"\/lib\/ionic\/version.json": {
 		"fileType": 524288,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/lib\/ionic\/version.json",
+		"inputAbbreviatedPath": "\/lib\/ionic\/version.json",
 		"orderOutput": 0,
-		"outputAbbreviatedPath": "\/www\/lib\/ionic\/version-min.json",
+		"outputAbbreviatedPath": "\/lib\/ionic\/version-min.json",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
-	"\/www\/templates\/about.html": {
+	"\/templates\/about.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/about.html",
+		"inputAbbreviatedPath": "\/templates\/about.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/browse.html": {
+	"\/templates\/browse.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/browse.html",
+		"inputAbbreviatedPath": "\/templates\/browse.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/guide.html": {
+	"\/templates\/guide.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/guide.html",
+		"inputAbbreviatedPath": "\/templates\/guide.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/login.html": {
+	"\/templates\/login.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/login.html",
+		"inputAbbreviatedPath": "\/templates\/login.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/lore.html": {
+	"\/templates\/lore.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/lore.html",
+		"inputAbbreviatedPath": "\/templates\/lore.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/map.html": {
+	"\/templates\/map.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/map.html",
+		"inputAbbreviatedPath": "\/templates\/map.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/menu.html": {
+	"\/templates\/menu.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/menu.html",
+		"inputAbbreviatedPath": "\/templates\/menu.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/news.html": {
+	"\/templates\/news.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/news.html",
+		"inputAbbreviatedPath": "\/templates\/news.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/player.html": {
+	"\/templates\/player.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/player.html",
+		"inputAbbreviatedPath": "\/templates\/player.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/playlist.html": {
+	"\/templates\/playlist.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/playlist.html",
+		"inputAbbreviatedPath": "\/templates\/playlist.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/playlists.html": {
+	"\/templates\/playlists.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/playlists.html",
+		"inputAbbreviatedPath": "\/templates\/playlists.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/www\/templates\/search.html": {
+	"\/templates\/search.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/www\/templates\/search.html",
+		"inputAbbreviatedPath": "\/templates\/search.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -1420,13 +1163,13 @@
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
-	"displayValue": "The Hybrid",
-	"displayValueWasSetByUser": 1,
-	"iconImageName": "meme-ariel"
+	"displayValue": "www",
+	"displayValueWasSetByUser": 0,
+	"iconImageName": "pencil_orange"
 	},
 "projectSettings": {
 	"alwaysUseExternalServer": 0,
-	"animateCSSInjections": 0,
+	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
 	"autoSyncProjectSettingsFile": 1,
