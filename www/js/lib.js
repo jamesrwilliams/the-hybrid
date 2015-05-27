@@ -98,16 +98,25 @@ function setData(input_data){
  * 																	
  * ========================================================================================================================                                                                                                           
  */
- 
+
+
+/*
+== Final Variables 
+*/
+
+var game = new Object();
+
+var position = new Object();
+
+/*
+== 
+*/
+
 
 var test_lat = 51.887761;
 var test_lng = -2.088182;
 
-var zombie = "#4e8c03";
-
-var map, i, output;
-
-var test_marker;
+var map, i, output, test_marker;
 
 var polygons = [];
 
@@ -129,48 +138,21 @@ function drawHex(width, lat, lng){
 	
 }
 
-var game = new Object();
-
-game.setup = new Object();
-game.style = new Object();
-game.grid = new Object();
-game.style.active = new Object();
-game.style.grid = new Object();
-game.origin = new Object();
-
-game.origin.lat = "51.889378";
-game.origin.lng = "-2.092853";
-
-game.setup.size = 13;
-
-game.style.vampire = "#7C0107";
-game.style.werewolf = "#231552";
-game.style.ghost = "#35D1ED";
-game.style.zombie = "4E8D03";
-game.style.ots = "#FFFFFF";
-
-game.style.grid.strokeColour = "#48d1af";
-game.style.grid.strokeWeight = 2.5;
-game.style.grid.strokeOpacity = 1;
-game.style.grid.fillColour = "#FFFFFF";
-game.style.grid.fillOpactiy = 0.5;
-
-game.style.active.fillColor = "#48d1af";
-game.style.active.fillOpacity = 0.1;
-
-
-var json_data = JSON.stringify(game);
-
-
 function isNumber(n){
+	
    return n == parseFloat(n);
+   
 }
 function isEven(n){
+	
    return isNumber(n) && (n % 2 === 0);
+   
 }
 
 function isOdd(n){
+	
    return isNumber(n) && (Math.abs(n) % 2 === 1);
+   
 }
 
 function locationError(){
@@ -180,55 +162,62 @@ function locationError(){
 }
 
 
-function drawFences(origin_lat, origin_lng){
-
-	// Number of rows in the honeycomb grid
-	var rows = game.setup.size; 
+function drawFences(origin_lat, origin_lng, game){
 	
-	// Length of hexagos in each row.
+
 	var length = 10;
 	var iter = 10;
 	
-	// Difference in height between each row.
-	var heightDiff = 300;
-	
 	var offset = 0.000300;
 	var oddTab = 0.000270;
-	
-	// Global HEX settings
-	var strokeColour = "#48d1af";
-	var strokeWeight = 3;
-	var strokeOpacity = 0.1;
-	
-	var fillColour = "#FFFFFF";
-	var fillOpactiy = 0;
 	
 	/*	
 	 *	Generate the Grid System 
 	 */
 	 
-	for(count = 0; count < rows; count++){
+	for(count = 0; count < game.setup.height; count++){
 		
 		if(isEven(count)){
 			
-			for(i = 0; i < length; i++){
+			for(i = 0; i < game.setup.width; i++){
 
 				var lat_offset = (i * 0);
 				var lng_offset = (i * -0.00054);
 		
-				polygons.push(map.drawPolygon({ paths: drawHex(1, origin_lat - (offset*count), (origin_lng - lng_offset)), strokeColor: strokeColour, strokeOpacity: strokeOpacity, strokeWeight: strokeWeight, fillColor: fillColour, fillOpacity: fillOpactiy }));			
+				polygons.push(map.drawPolygon({ 
+					
+					paths: drawHex(1, origin_lat - (offset*count), 
+					(origin_lng - lng_offset)), 
+					strokeColor: game.grid.strokeColour, 
+					strokeOpacity: game.grid.strokeWeight, 
+					strokeWeight: game.grid.strokeOpacity, 
+					fillColor: game.style.fillColor, 
+					fillOpacity: game.style.fillOpactiy
+				
+				}));			
+			
 			}
 			
-			
 		}
+		
 		else if(isOdd(count)){
 			
-			for(i = 0; i < length-1; i++){
+			for(i = 0; i < game.setup.width-1; i++){
 
 				var lat_offset = (i * 0);
 				var lng_offset = (i * -0.00054);
 		
-				polygons.push(map.drawPolygon({ paths: drawHex(1, origin_lat - (offset*count), ((origin_lng+oddTab) - lng_offset)), strokeColor: strokeColour, strokeOpacity: strokeOpacity, strokeWeight: strokeWeight, fillColor: fillColour, fillOpacity: fillOpactiy }));	
+				polygons.push(map.drawPolygon({ 
+					
+					paths: drawHex(1, origin_lat - (offset*count), 
+					((origin_lng+oddTab) - lng_offset)), 
+					strokeColor: game.grid.strokeColour, 
+					strokeOpacity: game.grid.strokeWeight, 
+					strokeWeight: game.grid.strokeOpacity, 
+					fillColor: game.style.fillColor, 
+					fillOpacity: game.style.fillOpactiy					
+					
+				}));	
 					
 			
 			}
@@ -239,7 +228,9 @@ function drawFences(origin_lat, origin_lng){
 	
 }
 
-var locationSuccess = function(position) {
+var locationSuccess = function(_position) {
+		
+	position = _position;	
 		
 	var player = map.addMarker({
 	
@@ -266,26 +257,10 @@ var locationSuccess = function(position) {
 		
 	});	
 	
+	// Enable Claim_button / disable loading animation
 	
-	var active_counter = 0;
+	$("#claimBtn").removeAttr('disabled');
 	
-	for(i = 0; i < polygons.length; i++){
-		
-		
-		if(map.checkGeofence(test_lat, test_lng, polygons[i]) || map.checkGeofence(position.coords.latitude, position.coords.longitude, polygons[i])){
-			
-			// Inside Fence
-			
-			polygons[i].setOptions({fillColor: game.style.active.fillColor, fillOpacity: game.style.active.fillOpacity});
-			
-			active_counter++;
-			
-		}
-		
-		
-	}
-	
-	output.innerHTML = output.innerHTML + "<p>Markers in: " + active_counter + " of " + polygons.length + " grids. <br /></p>";
  
 };
 
@@ -297,58 +272,83 @@ function init_geo(){
 	
 }
 
-function initialise(){
+function claim_location(){
 	
-	output = document.getElementById("output");
+	// 0 - Get user claim choice
+	
+	// 1 - Find Location
+	
+	for(i = 0; i < polygons.length; i++){
+		
+		
+		if(map.checkGeofence(test_lat, test_lng, polygons[i]) || map.checkGeofence(position.coords.latitude, position.coords.longitude, polygons[i])){
+			
+			polygons[i].setOptions({fillColor: "#FFFFFF", fillOpacity: 1});
+			
+		}
+		
+	}
+	
+	// 2 - Change its stats
+	
+	// 3 - Send back to server
+	
+	// 4 - on completeion refresh
+	
+};
+
+function initialise(_data){
+	
+	var game = _data;
 	
 	if("geolocation" in navigator) {
 	
-	// GMAPS Docs - https://hpneo.github.io/gmaps/documentation.html
+		// GMAPS Docs - https://hpneo.github.io/gmaps/documentation.html
 	
-	map = new GMaps({
-		zoom: 17,
-		div: '#map-canvas',
-		lat: 51.887180,
-		lng: -2.088669,
-		disableDefaultUI: true
-	});	
+		map = new GMaps({
+			zoom: 17,
+			div: '#map-canvas',
+			lat: 51.887180,
+			lng: -2.088669,
+			disableDefaultUI: true
+		});	
 	
 	
-	var styles = [
-	
-		{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},
-		{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},
-		{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
-		{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},
-		{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},
-		{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"hue":"#ff0000"},{"lightness":"100"}]},
-		{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},
-		{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},
-		{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"lightness":"7"}]},
-		{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},
-		{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#48d1af"}]},
-		{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#66b0ff"}]},
-		{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},
-		{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},
-		{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"off"}]},
-		{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},
-		{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"off"}]},
-		{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"lightness":"100"},{"visibility":"off"}]},
-		{"featureType":"road.arterial","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},
-		{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},
-		{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},
-		{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},
-		{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"lightness":"100"},{"visibility":"on"}]},
-		{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},
-		{"featureType":"transit.station.bus","elementType":"labels.text.fill","stylers":[{"hue":"#ff0000"}]},
-		{"featureType":"water","elementType":"geometry","stylers":[{"color":"#4aceae"},{"lightness":17}]},
-		{"featureType":"water","elementType":"geometry.fill","stylers":[{"lightness":"100"}]}
+		var styles = [
 		
-	];
+			{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},
+			{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},
+			{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+			{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},
+			{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},
+			{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"hue":"#ff0000"},{"lightness":"100"}]},
+			{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},
+			{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},
+			{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"lightness":"7"}]},
+			{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},
+			{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#48d1af"}]},
+			{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#66b0ff"}]},
+			{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},
+			{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},
+			{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"off"}]},
+			{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},
+			{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"off"}]},
+			{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"lightness":"100"},{"visibility":"off"}]},
+			{"featureType":"road.arterial","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},
+			{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},
+			{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},
+			{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},
+			{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"lightness":"100"},{"visibility":"on"}]},
+			{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},
+			{"featureType":"transit.station.bus","elementType":"labels.text.fill","stylers":[{"hue":"#ff0000"}]},
+			{"featureType":"water","elementType":"geometry","stylers":[{"color":"#4aceae"},{"lightness":17}]},
+			{"featureType":"water","elementType":"geometry.fill","stylers":[{"lightness":"100"}]}
+			
+		];
 	
-	map.setOptions({styles: styles});
+		map.setOptions({styles: styles});
 	
-	drawFences(51.888860, -2.091646);
+		drawFences(51.888860, -2.091646, game);
 	
 	/*
 	
@@ -363,56 +363,38 @@ function initialise(){
 	
 	for(i=0; i < polygons.length; i++){
 		
-		if(isOdd(i)){
-			
-			game.grid[i] = "3";
-			
-		}else{
-			
-			game.grid[i] = "4";
-			
-		}
-		
-		console.log("Grid: " + i + " - " + game.grid[i]);
+		// console.log("Grid: " + i + " - " + game.grid[i]);
 		
 		if(game.grid[i] === "1"){
 			
 			// Vampires
-			console.log("Vampire");
-			
 			polygons[i].setOptions({fillColor: game.style.vampire, fillOpacity: game.style.active.fillOpacity});
 			
 	
 		}else if(game.grid[i] == "2"){
 			
 			// Werewolf
-			console.log("Werewolf");
-			
 			polygons[i].setOptions({fillColor: game.style.werewolf, fillOpacity: game.style.active.fillOpacity});
 
 			
 		}else if(game.grid[i] == "3"){
 			
 			// Ghost
-			
 			polygons[i].setOptions({fillColor: game.style.ghost, fillOpacity: game.style.active.fillOpacity});
 			
 		}else if(game.grid[i] == "4"){
 			
 			// Zombie
-			
 			polygons[i].setOptions({fillColor: game.style.zombie, fillOpacity: game.style.active.fillOpacity});
 			
 		}else {
 			
-			polygons[i].setOptions({fillColor: "#FFFFFF", fillOpacity: 1});
+			// Not Occupied
+			polygons[i].setOptions({fillColor: "#FFFFFF", fillOpacity: 0.1});
 			
 		}
 		
 	}
-	
-		
-	// console.log(JSON.stringify(game));
 	
 	init_geo();
 	

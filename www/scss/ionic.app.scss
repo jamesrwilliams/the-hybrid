@@ -18,7 +18,7 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
-@import "../www/lib/ionic/scss/ionic";
+@import "../lib/ionic/scss/ionic";
 
 body {
 	
@@ -104,10 +104,9 @@ body {
 #map-canvas {
 	
 	padding: 20px;
-	margin-top: -20px;
 	position: absolute;
 	top:0;
-	bottom: 20px;
+	bottom: 0;
 	width: 100%;
 	
 }

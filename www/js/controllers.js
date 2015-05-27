@@ -138,29 +138,54 @@ angular.module('starter.controllers', [])
   
 })
 
-.controller('MapCtrl',function($scope, $ionicModal, $timeout, $http){
+.controller('MapCtrl',function($scope, $ionicPopup, $timeout, $http){
 	
-	initialise();
+	$scope.claim = function(){
+		
+		claim_location();
+		$scope.claimDialog();
+		
+	};
 	
-	try{
+	$scope.claimDialog = function(){
+		
+		var claim = $ionicPopup.show({
+			
+			template: '<button ng-click="showAlert()" class="button button-block">Vampire</button"><br/><button class="button button-block">Werewolf</button><button class="button button-block">Ghost</button><button class="button button-block">Zombie</button><br/>',
+			title:"Choose your side",
+			subtitle:"The fate of humanity is in your hand",
+			scope: $scope,
+			buttons: [
+				
+				{ text: 'Cancel'	}
+				
+			]
+			
+		});
+		
+	};
+	
+	$scope.showAlert = function() {
+	
+		var alertPopup = $ionicPopup.alert({
+			
+			title: 'Infection Requires an Internet Connection',
+			template: 'Sorry it seems The Hybrid Companion cannot connect to the game servers. Please try again later.',
+			animation: 'fade-in'
+		
+		});
 		
 		
-		
-	}catch(e){
+	};
 	
-		alert("Error");	
-		
-	}
+	$http.get('http://www.jamesrwilliams.co.uk/hybrid/api.php?request=fetch_game').then(function(resp) {
 	
-	$http.get('http://www.jamesrwilliams.co.uk/hybrid/api.php?request=game').then(function(resp) {
-	
-			console.log(resp.data);
-			// For JSON responses, resp.data contains the result
+			initialise(resp.data);
+			
 	
 		}, function(err) {
 			
-			console.log('ERR', err);
-			// err.status will contain the status code
+			$scope.showAlert();
 			
 		})
 	
