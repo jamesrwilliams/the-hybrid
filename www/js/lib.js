@@ -39,6 +39,7 @@ function getLoreData(){
 	$("#lore_output").text("Fetching Data");
 	
 	var request = new XMLHttpRequest();
+	
 	request.open('GET', 'http://www.the-hybrid.co.uk/api.php?request=get_lore_posts', true);
 
 	request.onload = function() {

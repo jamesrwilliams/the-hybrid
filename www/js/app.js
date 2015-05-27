@@ -55,11 +55,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
   
-   .state('app.guide', {
-    url: "/guide",
+   .state('app.the-hybrid', {
+    url: "/the-hybrid",
     views: {
       'menuContent': {
-        templateUrl: "templates/guide.html"
+        templateUrl: "templates/the-hybrid.html"
       }
     }
   })
