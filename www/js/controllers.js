@@ -58,6 +58,36 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('HybridCtrl', function($scope, $ionicPopover, $ionicBackdrop, $timeout){
+	
+	var template = "<ion-popover-view><ion-header-bar><h1 class='title'>Popover</h1></ion-header-bar><ion-content>Wassss up!</ion-content></ion-popover-view>"
+	
+	$scope.popover = $ionicPopover.fromTemplate(template, {
+		
+		$scope: $scope
+		
+	});
+	
+	$scope.openPopover = function($event){
+		
+		$ionicBackdrop.retain();
+		$scope.popover.show($event);	
+		
+	};
+
+		
+		console.log("Fired");
+		
+		
+		$timeout(function(){
+			
+			$ionicBackdrop.release();
+			
+		}, 5000);
+		
+	
+})
+
 .controller('LoginCtrl', function($scope, $http){
 	
  $scope.data = {}
@@ -108,9 +138,32 @@ angular.module('starter.controllers', [])
   
 })
 
-.controller('MapCtrl',function($scope, $ionicModal, $timeout){
+.controller('MapCtrl',function($scope, $ionicModal, $timeout, $http){
 	
 	initialise();
+	
+	try{
+		
+		
+		
+	}catch(e){
+	
+		alert("Error");	
+		
+	}
+	
+	$http.get('http://www.jamesrwilliams.co.uk/hybrid/api.php?request=game').then(function(resp) {
+	
+			console.log(resp.data);
+			// For JSON responses, resp.data contains the result
+	
+		}, function(err) {
+			
+			console.log('ERR', err);
+			// err.status will contain the status code
+			
+		})
+	
 	
 })
 

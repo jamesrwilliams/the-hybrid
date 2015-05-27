@@ -129,11 +129,11 @@ function drawHex(width, lat, lng){
 	
 }
 
-
 var game = new Object();
 
 game.setup = new Object();
 game.style = new Object();
+game.grid = new Object();
 game.style.active = new Object();
 game.style.grid = new Object();
 game.origin = new Object();
@@ -141,7 +141,13 @@ game.origin = new Object();
 game.origin.lat = "51.889378";
 game.origin.lng = "-2.092853";
 
-game.setup.size = 25;
+game.setup.size = 13;
+
+game.style.vampire = "#7C0107";
+game.style.werewolf = "#231552";
+game.style.ghost = "#35D1ED";
+game.style.zombie = "4E8D03";
+game.style.ots = "#FFFFFF";
 
 game.style.grid.strokeColour = "#48d1af";
 game.style.grid.strokeWeight = 2.5;
@@ -152,7 +158,9 @@ game.style.grid.fillOpactiy = 0.5;
 game.style.active.fillColor = "#48d1af";
 game.style.active.fillOpacity = 0.1;
 
+
 var json_data = JSON.stringify(game);
+
 
 function isNumber(n){
    return n == parseFloat(n);
@@ -171,14 +179,15 @@ function locationError(){
 	
 }
 
+
 function drawFences(origin_lat, origin_lng){
 
 	// Number of rows in the honeycomb grid
-	var rows = 25; 
+	var rows = game.setup.size; 
 	
 	// Length of hexagos in each row.
-	var length = 25;
-	var iter = 25;
+	var length = 10;
+	var iter = 10;
 	
 	// Difference in height between each row.
 	var heightDiff = 300;
@@ -328,7 +337,8 @@ function initialise(){
 		{"featureType":"road.arterial","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},
 		{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},
 		{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},
-		{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"lightness":"100"},{"visibility":"on"}]},
+		{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},
+		{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"lightness":"100"},{"visibility":"on"}]},
 		{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},
 		{"featureType":"transit.station.bus","elementType":"labels.text.fill","stylers":[{"hue":"#ff0000"}]},
 		{"featureType":"water","elementType":"geometry","stylers":[{"color":"#4aceae"},{"lightness":17}]},
@@ -337,9 +347,72 @@ function initialise(){
 	];
 	
 	map.setOptions({styles: styles});
-
 	
-	drawFences(51.889378, -2.092853);
+	drawFences(51.888860, -2.091646);
+	
+	/*
+	
+		- 1 Vampire
+		- 2 Werewolf
+		- 3 Ghost
+		- 4 Zombie
+		- 5 OTS
+		- 6 Free	
+		
+	*/
+	
+	for(i=0; i < polygons.length; i++){
+		
+		if(isOdd(i)){
+			
+			game.grid[i] = "3";
+			
+		}else{
+			
+			game.grid[i] = "4";
+			
+		}
+		
+		console.log("Grid: " + i + " - " + game.grid[i]);
+		
+		if(game.grid[i] === "1"){
+			
+			// Vampires
+			console.log("Vampire");
+			
+			polygons[i].setOptions({fillColor: game.style.vampire, fillOpacity: game.style.active.fillOpacity});
+			
+	
+		}else if(game.grid[i] == "2"){
+			
+			// Werewolf
+			console.log("Werewolf");
+			
+			polygons[i].setOptions({fillColor: game.style.werewolf, fillOpacity: game.style.active.fillOpacity});
+
+			
+		}else if(game.grid[i] == "3"){
+			
+			// Ghost
+			
+			polygons[i].setOptions({fillColor: game.style.ghost, fillOpacity: game.style.active.fillOpacity});
+			
+		}else if(game.grid[i] == "4"){
+			
+			// Zombie
+			
+			polygons[i].setOptions({fillColor: game.style.zombie, fillOpacity: game.style.active.fillOpacity});
+			
+		}else {
+			
+			polygons[i].setOptions({fillColor: "#FFFFFF", fillOpacity: 1});
+			
+		}
+		
+	}
+	
+		
+	// console.log(JSON.stringify(game));
 	
 	init_geo();
 	

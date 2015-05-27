@@ -59,7 +59,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/the-hybrid",
     views: {
       'menuContent': {
-        templateUrl: "templates/the-hybrid.html"
+        templateUrl: "templates/the-hybrid.html",
+        controller: "HybridCtrl"
       }
     }
   })
