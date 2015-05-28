@@ -1,29 +1,75 @@
 <ion-view view-title="Player" class="player">
   <ion-content has-bouncing="false">
+  	<ion-refresher
+  	pulling-text="Pull to refresh..."
+  	on-refresh="playerRefresh()">
+  </ion-refresher>
+  
+  <div class="player_card">
+  
+  	<div class="row">
+	  	
+	  	<div class="col">
+		  	
+		  	<img src="./img/hybrid-idle.gif" height="75" width="" />
+		  	
+	  	</div>
+	  	
+	  	<div class="col">
+		  	
+		  	<div class="row">
+			  	
+			  	<h2><span id="player_id">{PLAYER}</span></h2>
+			  	
+		  	</div>
+		  	<div class="row">
+			  	
+			  	<div class="col">
+			  	
+			  		<span id="player_xp">{TOTAL XP}</span>
+			  	
+			  	</div>
+			  	
+			  	<div class="col">
+				  	
+				  	<span id="player_health">{HEALTH}</span>
+				  	
+			  	</div>
+			  	
+		  	</div>
+		  	
+	  	</div>
+	  	
+  	</div>
+  	
+  </div>
   	
   	<ion-slide-box>
   	
   		<ion-slide>
   		
   			<div class="box box1">
-
-	  			<div class="row">
-	    
-				    <div class="col-50">
-					    
-					    <img src="http://placehold.it/250x250" style="border: 1px solid red;" />
-					    
+	  			
+	  			<div class="list">	
+	  			
+	  				<div class="item item-divider">
+					   Kills per form
+					  </div>
+					  <div class="item">
+				     Vampire - <span id="vampire_kills">XX</span>
 				    </div>
-				    
-				    <div class="col">
-					    
-					    <p>Player ID</p>
-					    
+				    <div class="item">
+				    Werewolf - <span id="werewolf_kills">XX</span>
 				    </div>
-				    
+				    <div class="item">
+				     Ghost - <span id="ghost_kills">XX</span>
+				    </div>
+				    <div class="item">
+				     Zombie - <span id="zombie_kills">XX</span>
+				    </div>
 	  			</div>
-	    
-    	</div>
+    		
+    		</div>
   		
   		</ion-slide>
     
@@ -31,15 +77,16 @@
   		
   			<div class="box box2">
 
-	  			<h1>Box 2</h1>
-	  			
-	  			<div class="spinner">
-  <div class="rect1"></div>
-  <div class="rect2"></div>
-  <div class="rect3"></div>
-  <div class="rect4"></div>
-  <div class="rect5"></div>
-</div>	  			
+	  			<div class="row">
+	    
+	  				<div class="item">
+		  				
+		  				<h1>Story</h1>
+		  				
+	  				</div>
+				    				    
+	  			</div>
+	  		  			
   			</div>
   		
   		</ion-slide>

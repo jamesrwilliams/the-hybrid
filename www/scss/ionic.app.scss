@@ -18,6 +18,7 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
+
 @import "../lib/ionic/scss/ionic";
 
 body {
@@ -25,22 +26,83 @@ body {
 	font-size: 14px;
 	color: #444;
 	
+	
+}
+
+.player_card {
+	
+	background: #4c5058; /* Old browsers */
+	background: -moz-linear-gradient(top,  #4c5058 0%, #85878a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c5058), color-stop(100%,#85878a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #4c5058 0%,#85878a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #4c5058 0%,#85878a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #4c5058 0%,#85878a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #4c5058 0%,#85878a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c5058', endColorstr='#85878a',GradientType=0 ); /* IE6-9 */
+	
+	
+	height: 50%;
+	
+}
+
+.menu-left .scroll {
+	
+	background: #444;
+	
+}
+
+/*
+== Enables Responsive Video on iframe embeds	
+*/
+
+.scroll{height: 100%;}
+
+.videoWrapper {
+	
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	margin-bottom: 20px;
+}
+	
+.videoWrapper iframe {
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .player {
+
+	#player_xp,
+	#player_health {
+		
+		font-weight: bold;
+		color: white;
+		
+	}
+	
+	.slider {
+		
+		height: 50%;
+		
+	}
 	
 	height: 100%;
 	width: auto;
 	
 	.box {
-	
-		height: 200px;
+		
+		height: 100%;
 	
 	}
 	
 	.box1 {
 		
-		background: yellow;
+		// background: yellow;
 		
 	}
 	

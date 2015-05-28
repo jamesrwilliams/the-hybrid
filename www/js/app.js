@@ -50,7 +50,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/player",
     views: {
       'menuContent': {
-        templateUrl: "templates/player.html"
+        templateUrl: "templates/player.html",
+        controller: "PlayerCtrl"
       }
     }
   })
@@ -61,15 +62,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       'menuContent': {
         templateUrl: "templates/the-hybrid.html",
         controller: "HybridCtrl"
-      }
-    }
-  })
-  
-   .state('app.news', {
-    url: "/news",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/news.html"
       }
     }
   })
