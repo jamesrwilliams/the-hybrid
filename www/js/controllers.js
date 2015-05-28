@@ -140,9 +140,10 @@ angular.module('starter.controllers', [])
 
 .controller('MapCtrl',function($scope, $ionicPopup, $timeout, $http){
 	
+	var game;
+	
 	$scope.claim = function(){
 		
-		claim_location();
 		$scope.claimDialog();
 		
 	};
@@ -151,26 +152,36 @@ angular.module('starter.controllers', [])
 		
 		var claim = $ionicPopup.show({
 			
-			template: '<button ng-click="showAlert()" class="button button-block">Vampire</button"><br/><button class="button button-block">Werewolf</button><button class="button button-block">Ghost</button><button class="button button-block">Zombie</button><br/>',
+			template: '<p>The fate of humanity is in your hand</p><button ng-click="vampire()" ng-value="1" class="button button-block">Vampire</button"><button ng-click="werewolf()" class="button button-block">Werewolf</button><button class="button button-block" ng-click="ghost()">Ghost</button><button ng-click="zombie()" class="button button-block">Zombie</button>',
+				
 			title:"Choose your side",
-			subtitle:"The fate of humanity is in your hand",
 			scope: $scope,
 			buttons: [
 				
-				{ text: 'Cancel'	}
+				{ text: 'Cancel', type: 'button-positive'	}
 				
 			]
 			
 		});
-		
-	};
+
+		claim.then(function(res) {
+			
+	    	console.log('Tapped!', res);
+	    	
+	  	});
+	  	
+	  	$timeout(function() {
+		     claim.close(); //close the popup after 3 seconds for some reason
+		  }, 5000);
+  	
+  	};
 	
 	$scope.showAlert = function() {
 	
 		var alertPopup = $ionicPopup.alert({
 			
 			title: 'Infection Requires an Internet Connection',
-			template: 'Sorry it seems The Hybrid Companion cannot connect to the game servers. Please try again later.',
+			template: 'It seems The Hybrid Companion cannot connect to the game servers. Please try again later.',
 			animation: 'fade-in'
 		
 		});
@@ -178,8 +189,35 @@ angular.module('starter.controllers', [])
 		
 	};
 	
+	$scope.vampire = function($scope){ claim_location(1, game); }
+	$scope.werewolf = function($scope){ claim_location(2, game); }
+	$scope.ghost = function($scope){ claim_location(3, game); }
+	$scope.zombie = function($scope){ claim_location(4, game); }
+	
+	$scope.sendUpdate = function(){
+		
+			$http({
+			
+				method: 'POST',
+				url: 'http://www.jamesrwilliams.co.uk/hybrid/api.php',
+				data: $.param({request: "update_game", data:update_game}),
+				headers: {'Content-Type':'application/x-www-form-urlencoded'}
+					
+			})
+			.success(function(dataFromServer, status, headers, config){
+				
+				//console.log(config.data); 
+				console.log("James' " + dataFromServer);
+			
+			});
+			
+	};
+	
 	$http.get('http://www.jamesrwilliams.co.uk/hybrid/api.php?request=fetch_game').then(function(resp) {
 	
+		
+			game = resp.data;
+			console.log("Fetch Success");
 			initialise(resp.data);
 			
 	

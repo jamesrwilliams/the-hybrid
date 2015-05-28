@@ -272,22 +272,59 @@ function init_geo(){
 	
 }
 
-function claim_location(){
+function claim_location(choice, game){
 	
 	// 0 - Get user claim choice
+	
+	// alert(choice);
 	
 	// 1 - Find Location
 	
 	for(i = 0; i < polygons.length; i++){
 		
-		
 		if(map.checkGeofence(test_lat, test_lng, polygons[i]) || map.checkGeofence(position.coords.latitude, position.coords.longitude, polygons[i])){
 			
-			polygons[i].setOptions({fillColor: "#FFFFFF", fillOpacity: 1});
+			console.log("Active Grid: " + i + " - Current Value: " + game.grid[i]);
+			
+			if(choice == 1){
+				
+				// Set As Vampire
+				polygons[i].setOptions({fillColor: game.style.vampire, fillOpacity: 1});
+				game.grid[i] = 1;
+				
+			}else if(choice == 2){
+				
+				// Set AS Werewolf
+				polygons[i].setOptions({fillColor: game.style.werewolf, fillOpacity: 1});
+				game.grid[i] = 2;
+				
+			}else if(choice == 3){
+				
+				// Set As Ghost
+				polygons[i].setOptions({fillColor: game.style.ghost, fillOpacity: 1});
+				game.grid[i] = 3;
+			
+			}else if(choice == 4){
+				
+				// Set as Zombie
+				polygons[i].setOptions({fillColor: game.style.zombie, fillOpacity: 1});
+				game.grid[i] = 4;
+				
+			}
+			
+			console.log("New Value: " + game.grid[i]);
+			
+			
 			
 		}
 		
 	}
+	
+	$.post("http://www.jamesrwilliams.co.uk/hybrid/api.php?request=update_game", {data: game}, function(result){
+       
+        console.log(result);
+    
+    });	
 	
 	// 2 - Change its stats
 	
