@@ -314,15 +314,21 @@ function claim_location(choice, game){
 			
 			console.log("New Value: " + game.grid[i]);
 			
-			
-			
 		}
 		
 	}
 	
-	$.post("http://www.jamesrwilliams.co.uk/hybrid/api.php?request=update_game", {data: game}, function(result){
+	var json_string = JSON.stringify(game);
+	
+	$.post("http://www.jamesrwilliams.co.uk/hybrid/api.php?request=update_game", {data: json_string}, function(result){
        
-        console.log(result);
+       for(i=0; i < result.length; i++){
+	       
+	       console.log(result[i]);
+	       
+       }
+       
+      	console.log(result.length);
     
     });	
 	
@@ -332,11 +338,15 @@ function claim_location(choice, game){
 	
 	// 4 - on completeion refresh
 	
+	// initialise(game);
+	
 };
 
 function initialise(_data){
 	
 	var game = _data;
+	
+	//console.log(game);
 	
 	if("geolocation" in navigator) {
 	

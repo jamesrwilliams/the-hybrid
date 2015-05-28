@@ -215,10 +215,20 @@ angular.module('starter.controllers', [])
 	
 	$http.get('http://www.jamesrwilliams.co.uk/hybrid/api.php?request=fetch_game').then(function(resp) {
 	
-		
+			$scope.showAlert();
+	
+			var output = new Object();
+			
 			game = resp.data;
-			console.log("Fetch Success");
-			initialise(resp.data);
+			
+			game = game.replace(/\\"/g, '"');
+			game = game.substring(1, game.length-1);
+			
+			game = JSON.parse(game);
+			
+			// console.log(game);
+			
+			initialise(game);
 			
 	
 		}, function(err) {

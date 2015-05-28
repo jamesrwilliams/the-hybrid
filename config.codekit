@@ -298,22 +298,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/scss\/ionic.app.scss": {
-		"createSourceMap": 0,
-		"debugStyle": 0,
-		"decimalPrecision": 10,
-		"fileType": 4,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/scss\/ionic.app.scss",
-		"outputAbbreviatedPath": "\/css\/ionic.app.css",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"useLibsass": 0
-		},
 	"\/www\/css\/ionic.app.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -1380,6 +1364,22 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
+		},
+	"\/www\/scss\/ionic.app.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/www\/scss\/ionic.app.scss",
+		"outputAbbreviatedPath": "\/www\/css\/ionic.app.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
 		},
 	"\/www\/templates\/about.html": {
 		"fileType": 8192,
