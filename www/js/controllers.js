@@ -33,9 +33,39 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('SettingsCtrl', function($scope, $ionicPopup, $state){
+	
+	$scope.logout = function(){
+		
+		var prompt = $ionicPopup.show({
+					
+			title:"Are you sure?",
+			scope: $scope,
+			buttons: [
+				
+				{ 
+					text: 'Logout', 
+					type: 'button-assertive',
+					onTap: function(e) {
+					
+						localStorage.removeItem('the-hybrid_player');
+						$state.go('app.the-hybrid');
+					
+					}
+      
+				},
+	
+				{ text: 'Cancel' }
+				
+			]
+			
+		});	
+			
+	}
+	
+})
+
 .controller('AJAXCtrl', function($scope, $http) {
-	
-	
 	
 	$scope.doRefresh = function(){
 	
@@ -69,18 +99,20 @@ angular.module('starter.controllers', [])
 
 .controller('PlayerCtrl', function($scope, $http, $ionicPopup, $state){
 	
+	
+	
 	$scope.playerRefresh = function(){
 		
 		$scope.getPlayerData();	
 		$scope.$broadcast('scroll.refreshComplete');
-		
-		
 		
 	}
 	
 	$scope.getPlayerData = function(){
 		
 		var data = window.localStorage.getItem("the-hybrid_player");
+		
+		console.log();
 		
 		$scope.loginPrompt = function(){
 		
@@ -131,7 +163,19 @@ angular.module('starter.controllers', [])
 		
 		if(data != null){
 			
-			console.log("Loaded");
+			data = JSON.parse(data);
+			
+			console.log(data);
+			
+			$("#player_id").text("Player ID: " + data.player.player_id);
+			$("#player_xp").text("XP: " + data.player.xp.xp_general);
+			$("#player_health").text("HP: " + data.player.health);
+			
+			$("#vampire_kills").text(data.player.xp.xp_vampire);
+			$("#werewolf_kills").text(data.player.xp.xp_werewolf);
+			$("#ghost_kills").text(data.player.xp.xp_ghost);
+			$("#zombie_kills").text(data.player.xp.xp_zombie);
+			
 			
 		}else{
 			
@@ -139,9 +183,10 @@ angular.module('starter.controllers', [])
 						
 		}
 		
+		
 	}
 	
-	$scope.getPlayerData();
+	$scope.playerRefresh();
 	
 })
 
@@ -218,7 +263,7 @@ angular.module('starter.controllers', [])
 	  	
 	  	$timeout(function() {
 		     claim.close();
-		  }, 5000);
+		  }, 3000);
   	
   	};
 	

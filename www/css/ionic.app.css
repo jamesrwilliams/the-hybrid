@@ -8903,10 +8903,6 @@ body {
     height: 50%; }
   .player .box {
     height: 100%; }
-  .player .box2 {
-    background: red; }
-  .player .box3 {
-    background: blue; }
 
 .scroll {
   position: relative;

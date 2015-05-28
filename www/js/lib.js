@@ -258,6 +258,8 @@ var locationSuccess = function(_position) {
 		}
 	});
 	
+	/*
+	
 	test_marker = map.addMarker({
 	
 		lat: test_lat,
@@ -270,6 +272,8 @@ var locationSuccess = function(_position) {
 		}	
 		
 	});	
+	
+	*/
 	
 	// Enable Claim_button / disable loading animation
 	
@@ -296,7 +300,7 @@ function claim_location(choice, game){
 	
 	for(i = 0; i < polygons.length; i++){
 		
-		if(map.checkGeofence(test_lat, test_lng, polygons[i]) || map.checkGeofence(position.coords.latitude, position.coords.longitude, polygons[i])){
+		if(map.checkGeofence(position.coords.latitude, position.coords.longitude, polygons[i])){
 						
 			if(choice == 1){
 				
