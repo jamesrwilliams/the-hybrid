@@ -40,9 +40,8 @@
  * @param {object} data 
  * 
  */ 
+ 
 function drawLore(data){
-		
-	console.log(data);	
 		
 	$.each(data, function(i, value){
 		
@@ -65,8 +64,6 @@ function getLoreData(){
     
     	// Success!
 		var data = JSON.parse(request.responseText);
-    
-		console.log(data);
 		
 		setData(data);
 	
@@ -178,7 +175,6 @@ function locationError(){
 	output.innerHTML = output.innerHTML + "<p>Geolocation Fetch Fail</p>";
 	
 }
-
 
 function drawFences(origin_lat, origin_lng, game){
 	

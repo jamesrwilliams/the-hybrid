@@ -35,13 +35,13 @@ angular.module('starter.controllers', [])
 
 .controller('AJAXCtrl', function($scope, $http) {
 	
+	
+	
 	$scope.doRefresh = function(){
 	
 		$http.get('http://www.the-hybrid.co.uk/api.php?request=get_lore_posts').then(function(resp) {
 	
-			console.log('Success', resp);
-			// For JSON responses, resp.data contains the result
-	
+			$("#lore_output").text("");
 			drawLore(resp.data);
 	
 		}, function(err) {
@@ -50,10 +50,13 @@ angular.module('starter.controllers', [])
 			// err.status will contain the status code
 			
 		})
+		
 	
 		$scope.$broadcast('scroll.refreshComplete');
 		
 	}
+	
+	$scope.doRefresh();
 	
 
 })
@@ -64,47 +67,77 @@ angular.module('starter.controllers', [])
 	
 })
 
-.controller('PlayerCtrl', function($scope, $http){
+.controller('PlayerCtrl', function($scope, $http, $ionicPopup, $state){
 	
 	$scope.playerRefresh = function(){
 		
-		// console.log("refreshed");
+		$scope.getPlayerData();	
 		$scope.$broadcast('scroll.refreshComplete');
 		
-		$scope.getPlayerData();	
+		
 		
 	}
 	
 	$scope.getPlayerData = function(){
 		
-		$http({
+		var data = window.localStorage.getItem("the-hybrid_player");
 		
-			method: 'GET',
-			url: './js/player.json'
+		$scope.loginPrompt = function(){
 		
-		})
-		.success(function(data, status, headers, config){
+			var prompt = $ionicPopup.show({
+				
+				template: 'Please Login to Access Player Data',
+					
+				title:"Choose your side",
+				scope: $scope,
+				buttons: [
+					
+					{ 
+						text: 'Login', 
+						type: 'button-positive',
+						onTap: function(e) {
+						
+							$state.go('app.login');
+							console.log("Login Pressed");
+						
+						}
+          
+					},
 		
-			console.log(data);
-			
-			/*
-			== Assign Data Values to Screen
-			*/
-			
-			$("#player_id").text("Player ID: " + data.player.player_id);
-			$("#player_health").text(data.player.health); 
-			$("#player_xp").text(data.player.xp.xp_general);
-			
-			/*
-			== Assign XP Values
-			*/
-			
-			$("#vampire_kills").text(data.player.xp.xp_vampire);
-			$("#werewolf_kills").text(data.player.xp.xp_werewolf);
-			$("#ghost_kills").text(data.player.xp.xp_ghosts);
-			$("#zombie_kills").text(data.player.xp.xp_zombie);
+					{ 
+						text: 'Register', 
+						type: 'button',
+						onTap: function(e){
+							
+							console.log("Register Pressed");
+							window.open('http://www.the-hybrid.co.uk', '_system', 'location=yes'); return false;
+							
+						}
+						
+					}
+					
+				]
+				
+			});
 	
-		});
+			prompt.then(function(res) {
+				
+		    	// console.log('Tapped!');
+		    	
+		  	});
+	  	
+	  	};
+
+		
+		if(data != null){
+			
+			console.log("Loaded");
+			
+		}else{
+			
+			$scope.loginPrompt();
+						
+		}
 		
 	}
 	
@@ -112,7 +145,7 @@ angular.module('starter.controllers', [])
 	
 })
 
-.controller('LoginCtrl', function($scope, $http){
+.controller('LoginCtrl', function($scope, $http, $state){
 	
  $scope.data = {}
   
@@ -138,6 +171,12 @@ angular.module('starter.controllers', [])
 		
 		console.log(config);
 		console.warn(dataFromServer);
+		
+		var temp_string = JSON.stringify(dataFromServer);
+		
+		window.localStorage.setItem("the-hybrid_player",temp_string);
+		
+		$state.go('app.player');
 	
 	});
    
@@ -173,7 +212,7 @@ angular.module('starter.controllers', [])
 
 		claim.then(function(res) {
 			
-	    	console.log('Tapped!');
+	    	// console.log('Tapped!');
 	    	
 	  	});
 	  	
