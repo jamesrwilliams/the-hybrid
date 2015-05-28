@@ -173,12 +173,12 @@ angular.module('starter.controllers', [])
 
 		claim.then(function(res) {
 			
-	    	console.log('Tapped!', res);
+	    	console.log('Tapped!');
 	    	
 	  	});
 	  	
 	  	$timeout(function() {
-		     claim.close(); //close the popup after 3 seconds for some reason
+		     claim.close();
 		  }, 5000);
   	
   	};
@@ -203,6 +203,8 @@ angular.module('starter.controllers', [])
 	
 	$scope.sendUpdate = function(){
 		
+			claim.close();
+		
 			$http({
 			
 				method: 'POST',
@@ -214,7 +216,7 @@ angular.module('starter.controllers', [])
 			.success(function(dataFromServer, status, headers, config){
 				
 				//console.log(config.data); 
-				console.log("James' " + dataFromServer);
+				//console.log("James' " + dataFromServer);
 			
 			});
 			
@@ -222,9 +224,6 @@ angular.module('starter.controllers', [])
 	
 	$http.get('http://www.jamesrwilliams.co.uk/hybrid/api.php?request=fetch_game').then(function(resp) {
 	
-			$scope.showAlert();
-	
-			var output = new Object();
 			
 			game = resp.data;
 			
@@ -232,8 +231,6 @@ angular.module('starter.controllers', [])
 			game = game.substring(1, game.length-1);
 			
 			game = JSON.parse(game);
-			
-			// console.log(game);
 			
 			initialise(game);
 			
@@ -245,18 +242,4 @@ angular.module('starter.controllers', [])
 		})
 	
 	
-})
-
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Zombies', id: 1 },
-    { title: '70px', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
 });

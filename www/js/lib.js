@@ -301,9 +301,7 @@ function claim_location(choice, game){
 	for(i = 0; i < polygons.length; i++){
 		
 		if(map.checkGeofence(test_lat, test_lng, polygons[i]) || map.checkGeofence(position.coords.latitude, position.coords.longitude, polygons[i])){
-			
-			console.log("Active Grid: " + i + " - Current Value: " + game.grid[i]);
-			
+						
 			if(choice == 1){
 				
 				// Set As Vampire
@@ -330,8 +328,6 @@ function claim_location(choice, game){
 				
 			}
 			
-			console.log("New Value: " + game.grid[i]);
-			
 		}
 		
 	}
@@ -340,13 +336,6 @@ function claim_location(choice, game){
 	
 	$.post("http://www.jamesrwilliams.co.uk/hybrid/api.php?request=update_game", {data: json_string}, function(result){
        
-       for(i=0; i < result.length; i++){
-	       
-	       console.log(result[i]);
-	       
-       }
-       
-      	console.log(result.length);
     
     });	
 	
@@ -363,8 +352,6 @@ function claim_location(choice, game){
 function initialise(_data){
 	
 	var game = _data;
-	
-	//console.log(game);
 	
 	if("geolocation" in navigator) {
 	
