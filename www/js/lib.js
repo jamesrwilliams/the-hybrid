@@ -45,7 +45,7 @@ function drawLore(data){
 		
 	$.each(data, function(i, value){
 		
-		$("#lore_output").append("<a class='item item-wrap'><h2>" + value.title + "</h2><p>" + value.text + "</p>");
+		$("#lore_output").append("<div class='item item-wrap'><h2>" + value.title + "</h2><p>" + value.text + "</p></div>");
 		
 	});
 	 
@@ -96,7 +96,6 @@ function setData(input_data){
 	});
 	
 }
- 
 
 
 /* 
@@ -399,8 +398,8 @@ function initialise(_data){
 		];
 	
 		map.setOptions({styles: styles});
-	
-		drawFences(51.888860, -2.091646, game);
+
+		drawFences(51.888094, -2.091802, game);
 	
 	/*
 	
