@@ -304,25 +304,25 @@ function claim_location(choice, game){
 			if(choice == 1){
 				
 				// Set As Vampire
-				polygons[i].setOptions({fillColor: game.style.vampire, fillOpacity: 1});
+				polygons[i].setOptions({fillColor: game.style.vampire, fillOpacity: 0.5});
 				game.grid[i] = 1;
 				
 			}else if(choice == 2){
 				
 				// Set AS Werewolf
-				polygons[i].setOptions({fillColor: game.style.werewolf, fillOpacity: 1});
+				polygons[i].setOptions({fillColor: game.style.werewolf, fillOpacity: 0.5});
 				game.grid[i] = 2;
 				
 			}else if(choice == 3){
 				
 				// Set As Ghost
-				polygons[i].setOptions({fillColor: game.style.ghost, fillOpacity: 1});
+				polygons[i].setOptions({fillColor: game.style.ghost, fillOpacity: 0.5});
 				game.grid[i] = 3;
 			
 			}else if(choice == 4){
 				
 				// Set as Zombie
-				polygons[i].setOptions({fillColor: game.style.zombie, fillOpacity: 1});
+				polygons[i].setOptions({fillColor: game.style.zombie, fillOpacity: 0.5});
 				game.grid[i] = 4;
 				
 			}
@@ -424,7 +424,7 @@ function initialise(_data){
 		
 		// console.log("Grid: " + i + " - " + game.grid[i]);
 		
-		if(game.grid[i] === "1"){
+		if(game.grid[i] == "1"){
 			
 			// Vampires
 			polygons[i].setOptions({fillColor: game.style.vampire, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});

@@ -306,6 +306,12 @@ angular.module('starter.controllers', [])
 			
 	};
 	
+	$timeout(function(){
+		
+		console.log("Rest");
+		
+	}, 6000);
+	
 	$http.get('http://www.jamesrwilliams.co.uk/hybrid/api.php?request=fetch_game').then(function(resp) {
 	
 			
