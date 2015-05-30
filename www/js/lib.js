@@ -396,8 +396,16 @@ function initialise(_data){
 			{"featureType":"water","elementType":"geometry.fill","stylers":[{"lightness":"100"}]}
 			
 		];
+		
+		var alt_styles = [
+		
+		{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}
+		
+	];
+		
+	map.setOptions({styles: alt_styles});
 	
-		map.setOptions({styles: styles});
+	// map.setOptions({styles: styles});
 
 		drawFences(51.888094, -2.091802, game);
 	
@@ -419,29 +427,29 @@ function initialise(_data){
 		if(game.grid[i] === "1"){
 			
 			// Vampires
-			polygons[i].setOptions({fillColor: game.style.vampire, fillOpacity: game.style.active.fillOpacity});
+			polygons[i].setOptions({fillColor: game.style.vampire, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
 			
 	
 		}else if(game.grid[i] == "2"){
 			
 			// Werewolf
-			polygons[i].setOptions({fillColor: game.style.werewolf, fillOpacity: game.style.active.fillOpacity});
+			polygons[i].setOptions({fillColor: game.style.werewolf, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
 
 			
 		}else if(game.grid[i] == "3"){
 			
 			// Ghost
-			polygons[i].setOptions({fillColor: game.style.ghost, fillOpacity: game.style.active.fillOpacity});
+			polygons[i].setOptions({fillColor: game.style.ghost, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
 			
 		}else if(game.grid[i] == "4"){
 			
 			// Zombie
-			polygons[i].setOptions({fillColor: game.style.zombie, fillOpacity: game.style.active.fillOpacity});
+			polygons[i].setOptions({fillColor: game.style.zombie, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
 			
 		}else {
 			
 			// Not Occupied
-			polygons[i].setOptions({fillColor: "#FFFFFF", fillOpacity: 0.1});
+			polygons[i].setOptions({fillColor: "#FFFFFF", fillOpacity: 0.1,  strokeWeight: 0.1});
 			
 		}
 		
