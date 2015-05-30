@@ -10,7 +10,7 @@
  
  function login(){
 	 
-	 console.log("Login Started");
+	//  console.log("Login Started");
 	 
 	 var _user = $(".login #username").val();
 	 var _pass = $(".login #password").val();
@@ -37,7 +37,6 @@
  
 /**
  * Renders the Lore Data from the server into the DOM
- * @param {object} data 
  * 
  */ 
  
@@ -61,11 +60,8 @@ function getLoreData(){
 
 	request.onload = function() {
 	if (request.status >= 200 && request.status < 400) {
-    
-    	// Success!
-		var data = JSON.parse(request.responseText);
-		
-		setData(data);
+   	
+		setData(JSON.parse(request.responseText));
 	
 	} else {
 	
@@ -126,10 +122,6 @@ var position = new Object();
 == 
 */
 
-
-var test_lat = 51.887761;
-var test_lng = -2.088182;
-
 var map, i, output, test_marker;
 
 var polygons = [];
@@ -171,7 +163,7 @@ function isOdd(n){
 
 function locationError(){
 	
-	output.innerHTML = output.innerHTML + "<p>Geolocation Fetch Fail</p>";
+	alert("ERROR: Could Not Get Location Data");
 	
 }
 
@@ -257,25 +249,6 @@ var locationSuccess = function(_position) {
 		}
 	});
 	
-	/*
-	
-	test_marker = map.addMarker({
-	
-		lat: test_lat,
-		lng: test_lng,
-		title: "Test",
-		click: function(e){
-		
-			output.innerHTML = output.innerHTML + "<p>This is the Test Marker </p>";	
-			
-		}	
-		
-	});	
-	
-	*/
-	
-	// Enable Claim_button / disable loading animation
-	
 	$("#claimBtn").removeAttr('disabled');
 	
  
@@ -290,12 +263,6 @@ function init_geo(){
 }
 
 function claim_location(choice, game){
-	
-	// 0 - Get user claim choice
-	
-	// alert(choice);
-	
-	// 1 - Find Location
 	
 	for(i = 0; i < polygons.length; i++){
 		
@@ -333,29 +300,21 @@ function claim_location(choice, game){
 	
 	var json_string = JSON.stringify(game);
 	
-	$.post("http://www.jamesrwilliams.co.uk/hybrid/api.php?request=update_game", {data: json_string}, function(result){
+		$.post("http://www.jamesrwilliams.co.uk/hybrid/api.php?request=update_game", {data: json_string}, function(result){
        
-    
     });	
-	
-	// 2 - Change its stats
-	
-	// 3 - Send back to server
-	
-	// 4 - on completeion refresh
-	
-	// initialise(game);
 	
 };
 
 function initialise(_data){
 	
-	var game = _data;
+	var game = _data; // Specifiy the passed object from the controller to the funtion.
+	
+	polygons = []; // Reset the grid length so it replaces rather than appends to the data.
 	
 	if("geolocation" in navigator) {
 	
-		// GMAPS Docs - https://hpneo.github.io/gmaps/documentation.html
-	
+		// Draw Google Maps using GMAPS - Docs: https://hpneo.github.io/gmaps/documentation.html
 		map = new GMaps({
 			zoom: 17,
 			div: '#map-canvas',
@@ -363,107 +322,74 @@ function initialise(_data){
 			lng: -2.088669,
 			disableDefaultUI: true
 		});	
-	
-	
+		
+		// Google Maps API Styles from: https://snazzymaps.com/style/15/subtle-grayscale 
+		
 		var styles = [
 		
-			{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},
-			{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},
-			{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
-			{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},
-			{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},
-			{"featureType":"administrative.locality","elementType":"labels.text.fill","stylers":[{"hue":"#ff0000"},{"lightness":"100"}]},
-			{"featureType":"administrative.neighborhood","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},
-			{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},
-			{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"lightness":"7"}]},
-			{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},
-			{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#48d1af"}]},
-			{"featureType":"poi.park","elementType":"labels.text.fill","stylers":[{"color":"#66b0ff"}]},
-			{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},
-			{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},
-			{"featureType":"road.highway","elementType":"labels.text","stylers":[{"visibility":"off"}]},
-			{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},
-			{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"off"}]},
-			{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"lightness":"100"},{"visibility":"off"}]},
-			{"featureType":"road.arterial","elementType":"labels.text.stroke","stylers":[{"visibility":"off"}]},
-			{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},
-			{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"off"}]},
-			{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},
-			{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"lightness":"100"},{"visibility":"on"}]},
-			{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},
-			{"featureType":"transit.station.bus","elementType":"labels.text.fill","stylers":[{"hue":"#ff0000"}]},
-			{"featureType":"water","elementType":"geometry","stylers":[{"color":"#4aceae"},{"lightness":17}]},
-			{"featureType":"water","elementType":"geometry.fill","stylers":[{"lightness":"100"}]}
-			
+			{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},
+			{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},
+			{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},
+			{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},
+			{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},
+			{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},
+			{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},
+			{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},
+			{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}
+		
 		];
 		
-		var alt_styles = [
+		// Style the Maps with the colour scheme from above.
+		map.setOptions({styles: styles});
 		
-		{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}
 		
-	];
-		
-	map.setOptions({styles: alt_styles});
-	
-	// map.setOptions({styles: styles});
-
 		drawFences(51.888094, -2.091802, game);
 	
-	/*
+		/*
+		 * Style the Grid based on the settings in the game string. Chaning their colours etc.
+		 *
+		 */
 	
-		- 1 Vampire
-		- 2 Werewolf
-		- 3 Ghost
-		- 4 Zombie
-		- 5 OTS
-		- 6 Free	
+		for(i=0; i < polygons.length; i++){
+			
+			if(game.grid[i] == "1"){
+				
+				// Vampires
+				polygons[i].setOptions({fillColor: game.style.vampire, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
+				
 		
-	*/
+			}else if(game.grid[i] == "2"){
+				
+				// Werewolf
+				polygons[i].setOptions({fillColor: game.style.werewolf, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
 	
-	for(i=0; i < polygons.length; i++){
-		
-		// console.log("Grid: " + i + " - " + game.grid[i]);
-		
-		if(game.grid[i] == "1"){
-			
-			// Vampires
-			polygons[i].setOptions({fillColor: game.style.vampire, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
-			
-	
-		}else if(game.grid[i] == "2"){
-			
-			// Werewolf
-			polygons[i].setOptions({fillColor: game.style.werewolf, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
-
-			
-		}else if(game.grid[i] == "3"){
-			
-			// Ghost
-			polygons[i].setOptions({fillColor: game.style.ghost, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
-			
-		}else if(game.grid[i] == "4"){
-			
-			// Zombie
-			polygons[i].setOptions({fillColor: game.style.zombie, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
-			
-		}else {
-			
-			// Not Occupied
-			polygons[i].setOptions({fillColor: "#FFFFFF", fillOpacity: 0.1,  strokeWeight: 0.1});
+				
+			}else if(game.grid[i] == "3"){
+				
+				// Ghost
+				polygons[i].setOptions({fillColor: game.style.ghost, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
+				
+			}else if(game.grid[i] == "4"){
+				
+				// Zombie
+				polygons[i].setOptions({fillColor: game.style.zombie, fillOpacity: game.style.active.fillOpacity, strokeWeight: 0.1});
+				
+			}else {
+				
+				// Not Occupied
+				polygons[i].setOptions({fillColor: "#FFFFFF", fillOpacity: 0.1,  strokeWeight: 0.1});
+				
+			}
 			
 		}
 		
+		init_geo();
+		
+		
+	} else {
+		
+		alert("Geolocation Is Unavailable");
+				
 	}
-	
-	init_geo();
-	
-	
-} else {
-	
-	//TODO SupportiveErrorMessage - Geolocation Is Unavlaible 
-	
-}
 
-	
 }                                                                                    
-

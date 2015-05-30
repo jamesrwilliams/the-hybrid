@@ -1,17 +1,25 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
+/*
+ * The-Hybrid Companion - App.js
+ *
+ * Sets the AngularJS states and modules used in the app. 
+ * Allocating the controllers and templates forming the 
+ * app's structure.
+ * 
+ * @version		1.0
+ * @package		com.wearekiwikiwi.hybrid
+ * @description	App Controller for The Hybrid Companion App			
+ * @author 		James Williams (@James_RWilliams)
+ * @copyright 	Copyright (c) 30/05/2015
+ *
+ */	
+ 
 angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
+    
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    
- 
     
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -21,20 +29,19 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
      
-      
     }
   });
   
 })
-
+	
 .config(function($stateProvider, $urlRouterProvider) {
+  
   $stateProvider
 
   .state('app', {
     url: "/app",
     abstract: true,
     templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
   })
 
   .state('app.search', {
@@ -60,8 +67,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/the-hybrid",
     views: {
       'menuContent': {
-        templateUrl: "templates/the-hybrid.html",
-        controller: "HybridCtrl"
+        templateUrl: "templates/the-hybrid.html"
       }
     }
   })
@@ -112,27 +118,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 	    url: "/settings",
 	    views: {
 		    
-		  'menuContent': {
-          templateUrl: "templates/settings.html",
-          controller: "SettingsCtrl"
+			'menuContent': {
+				
+				templateUrl: "templates/settings.html",
+				controller: "SettingsCtrl"
 
-        }
-
+        	}
 		    
-	    }
+		}
 	    
-    })
-    
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
-      }
     });
-  // if none of the above states are matched, use this as the fallback
+    
+  // If none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/player');
   
 });

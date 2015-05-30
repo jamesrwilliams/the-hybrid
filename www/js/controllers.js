@@ -1,39 +1,31 @@
+/*
+ * The-Hybrid Companion - Controllers.js
+ *
+ * Sets the AngularJS states and modules used in the app. 
+ * Allocating the controllers and templates forming the 
+ * app's structure.
+ * 
+ * @version		1.0
+ * @package		com.wearekiwikiwi.hybrid
+ * @description	Page Controllers for The Hybrid Companion App			
+ * @author 		James Williams (@James_RWilliams)
+ * @copyright 	Copyright (c) 30/05/2015
+ *
+ */
+
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-  // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
-})
+/**
+ *	Settings Page Controller
+ *
+ *	1.	Fires a confirmation window for the user when they attempt to logout
+ *	2.	On confirmation then removes the LocalStorage 	
+ *
+ */
 
 .controller('SettingsCtrl', function($scope, $ionicPopup, $state){
+	
+	/* 1 */
 	
 	$scope.logout = function(){
 		
@@ -47,6 +39,8 @@ angular.module('starter.controllers', [])
 					text: 'Logout', 
 					type: 'button-assertive',
 					onTap: function(e) {
+
+						/* 2 */
 					
 						localStorage.removeItem('the-hybrid_player');
 						$state.go('app.the-hybrid');
@@ -65,6 +59,11 @@ angular.module('starter.controllers', [])
 	
 })
 
+/**
+ *	Lore Page Controller
+ *
+ */
+ 
 .controller('AJAXCtrl', function($scope, $http) {
 	
 	$scope.doRefresh = function(){
@@ -81,7 +80,6 @@ angular.module('starter.controllers', [])
 			
 		})
 		
-	
 		$scope.$broadcast('scroll.refreshComplete');
 		
 	}
@@ -91,11 +89,10 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HybridCtrl', function($scope, $ionicPopover, $ionicBackdrop, $timeout){
-	
-		
-	
-})
+/**
+ *	Players Page Controller	
+ *
+ */
 
 .controller('PlayerCtrl', function($scope, $http, $ionicPopup, $state){
 	
@@ -112,18 +109,14 @@ angular.module('starter.controllers', [])
 		
 		var data = window.localStorage.getItem("the-hybrid_player");
 		
-		console.log();
-		
 		$scope.loginPrompt = function(){
 		
 			var prompt = $ionicPopup.show({
 				
 				template: 'Please Login to Access Player Data',
-					
 				title:"Choose your side",
 				scope: $scope,
 				buttons: [
-					
 					{ 
 						text: 'Login', 
 						type: 'button-positive',
@@ -135,7 +128,6 @@ angular.module('starter.controllers', [])
 						}
           
 					},
-		
 					{ 
 						text: 'Register', 
 						type: 'button',
@@ -151,12 +143,6 @@ angular.module('starter.controllers', [])
 				]
 				
 			});
-	
-			prompt.then(function(res) {
-				
-		    	// console.log('Tapped!');
-		    	
-		  	});
 	  	
 	  	};
 
@@ -229,15 +215,17 @@ angular.module('starter.controllers', [])
   
 })
 
+/**
+ *	Map Page Controller
+ *	
+ *
+ */
+
 .controller('MapCtrl',function($scope, $ionicPopup, $timeout, $http){
 	
-	var game;
 	
-	$scope.claim = function(){
-		
-		$scope.claimDialog();
-		
-	};
+
+	$scope.claim = function(){ $scope.claimDialog(); };
 	
 	$scope.claimDialog = function(){
 		
@@ -249,23 +237,21 @@ angular.module('starter.controllers', [])
 			scope: $scope,
 			buttons: [
 				
-				{ text: 'Cancel', type: 'button-positive'	}
+				{ text: 'Close', type: 'button-positive'	}
 				
 			]
 			
 		});
-
-		claim.then(function(res) {
-			
-	    	// console.log('Tapped!');
-	    	
-	  	});
 	  	
 	  	$timeout(function() {
 		     claim.close();
-		  }, 3000);
+		  }, 6000);
   	
   	};
+	
+	/**
+	 * Fallback Alert Dialog for no internet connection.
+	 */
 	
 	$scope.showAlert = function() {
 	
@@ -280,56 +266,84 @@ angular.module('starter.controllers', [])
 		
 	};
 	
-	$scope.vampire = function($scope){ claim_location(1, game); }
+	/**	
+	 *	Depending on which option was clicked in the custom Popup UI
+	 *	pass a variable to the claimLocation Libaray in lib.js
+	 */
+	
+	$scope.vampire = function($scope){ 	claim_location(1, game); }
 	$scope.werewolf = function($scope){ claim_location(2, game); }
-	$scope.ghost = function($scope){ claim_location(3, game); }
-	$scope.zombie = function($scope){ claim_location(4, game); }
+	$scope.ghost = function($scope){ 	claim_location(3, game); }
+	$scope.zombie = function($scope){ 	claim_location(4, game); }
+	
+	/* 
+	 *	Send the update command to refresh the value for the newly claimed enviroment.
+	 *	game_api.php content for the PHP script that handles this request.
+	 */	
 	
 	$scope.sendUpdate = function(){
 		
-			claim.close();
+		/**
+		 *	Create the HTTP POST Request with Variables
+		 */
 		
-			$http({
-			
-				method: 'POST',
-				url: 'http://www.jamesrwilliams.co.uk/hybrid/api.php',
-				data: $.param({request: "update_game", data:update_game}),
-				headers: {'Content-Type':'application/x-www-form-urlencoded'}
-					
-			})
-			.success(function(dataFromServer, status, headers, config){
+		$http({
+		
+			method: 'POST',
+			url: 'http://www.jamesrwilliams.co.uk/hybrid/api.php',
+			data: $.param({request: "update_game", data:update_game}),
+			headers: {'Content-Type':'application/x-www-form-urlencoded'}
 				
-				//console.log(config.data); 
-				//console.log("James' " + dataFromServer);
+		})
+		
+		/**
+		 *	Success Callback if request was made then refreshes the display
+		 */ 
+		
+		.success(function(dataFromServer, status, headers, config){
 			
-			});
-			
+			$scope.update();
+			$scope.claim.close();
+		
+		});
+		
 	};
+	
+	/**
+	 *	Set a timeout to update the display 
+	 *	after the secified duration of time.
+	 */
 	
 	$timeout(function(){
 		
-		console.log("Rest");
+		$scope.update();
 		
 	}, 6000);
 	
-	$http.get('http://www.jamesrwilliams.co.uk/hybrid/api.php?request=fetch_game').then(function(resp) {
+	/**
+	 *	Function to fetch the latest game setup file from the server
+	 */
 	
+	$scope.update = function(){
+		
+		$http.get('http://www.jamesrwilliams.co.uk/hybrid/api.php?request=fetch_game').then(function(resp) {
 			
-			game = resp.data;
-			
-			game = game.replace(/\\"/g, '"');
+			// Response String needs sanitising from PHP to JSON
+			game = resp.data.replace(/\\"/g, '"');
 			game = game.substring(1, game.length-1);
 			
-			game = JSON.parse(game);
-			
-			initialise(game);
+			// Initialise the game - see Lib.js
+			initialise(JSON.parse(game));
 			
 	
 		}, function(err) {
 			
-			$scope.showAlert();
+			$scope.showAlert(); // If any server issues display error window to user.
 			
-		})
-	
+		});
+		
+	};
+
+	$scope.update();	// Call for an update for the first time the page is opened	
 	
 });
