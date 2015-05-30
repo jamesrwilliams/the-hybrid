@@ -1,16 +1,22 @@
 /*
- * Functions Library for the Hybrid Game App
- * -------------------
+ * The-Hybrid Companion - Lib.js
  *
- * By @James_RWilliams
- *
- * 25/05/15
+ * Sets the AngularJS states and modules used in the app. 
+ * Allocating the controllers and templates forming the 
+ * app's structure.
+ * 
+ * @version		1.0
+ * @package		com.wearekiwikiwi.hybrid
+ * @description	Functions Library for The Hybrid Companion App			
+ * @author 		James Williams (@James_RWilliams)
+ * @copyright 	Copyright (c) 30/05/2015
  *
  */
  
+ var alert;
+ 
  function login(){
 	 
-	//  console.log("Login Started");
 	 
 	 var _user = $(".login #username").val();
 	 var _pass = $(".login #password").val();
@@ -94,36 +100,22 @@ function setData(input_data){
 }
 
 
-/* 
- * ========================================================================================================================	
+/* ===================================================================================================================	
  * 	
- *  	888888888888  88        88  88888888888        ,ad8888ba,          db         88b           d88  88888888888 
- *      	 88       88        88  88                d8"'    `"8b        d88b        888b         d888  88           
- *  	 	 88       88        88  88               d8'                 d8'`8b       88`8b       d8'88  88           
- *  	 	 88       88aaaaaaaa88  88aaaaa          88                 d8'  `8b      88 `8b     d8' 88  88aaaaa     
- *  	 	 88       88""""""""88  88"""""          88      88888     d8YaaaaY8b     88  `8b   d8'  88  88"""""      
- *  	 	 88       88        88  88               Y8,        88    d8""""""""8b    88   `8b d8'   88  88           
- *  	 	 88       88        88  88                Y8a.    .a88   d8'        `8b   88    `888'    88  88           
- *  	 	 88       88        88  88888888888        `"Y88888P"   d8'          `8b  88     `8'     88  88888888888
+ *  888888888888  88        88  88888888888        ,ad8888ba,          db         88b           d88  88888888888 
+ *       88       88        88  88                d8"'    `"8b        d88b        888b         d888  88           
+ *  	 88       88        88  88               d8'                 d8'`8b       88`8b       d8'88  88           
+ *  	 88       88aaaaaaaa88  88aaaaa          88                 d8'  `8b      88 `8b     d8' 88  88aaaaa     
+ *  	 88       88""""""""88  88"""""          88      88888     d8YaaaaY8b     88  `8b   d8'  88  88"""""      
+ *  	 88       88        88  88               Y8,        88    d8""""""""8b    88   `8b d8'   88  88           
+ *  	 88       88        88  88                Y8a.    .a88   d8'        `8b   88    `888'    88  88           
+ *  	 88       88        88  88888888888        `"Y88888P"   d8'          `8b  88     `8'     88  88888888888
  * 																	
- * ========================================================================================================================                                                                                                           
- */
-
-
-/*
-== Final Variables 
-*/
+ * ================================================================================================================ */                                                                                                          
 
 var game = new Object();
-
 var position = new Object();
-
-/*
-== 
-*/
-
-var map, i, output, test_marker;
-
+var map, i, output;
 var polygons = [];
 
 function drawHex(width, lat, lng){
@@ -167,27 +159,65 @@ function locationError(){
 	
 }
 
+/**
+ *	DrawFences maps out the polgons for the Geolocation Game: Infection
+ *	
+ *	@parameter Origin_lat	- The starting Latitude of the game grid
+ *	@parameter Orgin_lang 	- The starting Longitude of the game grid
+ *	@parameter game	   		- The game data object
+ *
+ *
+ *	===================
+ *	Function Overview
+ *	===================
+ *
+ *	1. 	Setup Loop for the number of rows in the grid.
+ *
+ *	2. 	Check if the row number is odd or even. 
+ *		Odd rows need to be intended and one less 
+ *		than the row count to fit into the grid.
+ *
+ *	3.	Then Loop for the legnth of each row.
+ *
+ *	4.	From the count number the offset for the grid
+ *		can be calculated.
+ *
+ *	5.	Then create the map polygon using the 
+ *		drawHex() function with settings from
+ *		the 'game' object parameter 
+ *
+ */
+
 function drawFences(origin_lat, origin_lng, game){
 	
-
-	var length = 10;
-	var iter = 10;
 	
 	var offset = 0.000300;
 	var oddTab = 0.000270;
+	
+	var lat_offset, lng_offset, count;
 	
 	/*	
 	 *	Generate the Grid System 
 	 */
 	 
+	/* 1 */
+	 
 	for(count = 0; count < game.setup.height; count++){
+		
+		/* 2 */
 		
 		if(isEven(count)){
 			
+			/* 3 */
+			
 			for(i = 0; i < game.setup.width; i++){
 
-				var lat_offset = (i * 0);
-				var lng_offset = (i * -0.00054);
+				/* 4 */
+
+				lat_offset = (i * 0);
+				lng_offset = (i * -0.00054);
+			
+				/* 5 */
 		
 				polygons.push(map.drawPolygon({ 
 					
@@ -205,12 +235,20 @@ function drawFences(origin_lat, origin_lng, game){
 			
 		}
 		
+		/* 2 */
+		
 		else if(isOdd(count)){
 			
+			/* 3 */
+			
 			for(i = 0; i < game.setup.width-1; i++){
+				
+				/* 4 */
 
-				var lat_offset = (i * 0);
-				var lng_offset = (i * -0.00054);
+				lat_offset = (i * 0);
+				lng_offset = (i * -0.00054);
+				
+				/* 5 */
 		
 				polygons.push(map.drawPolygon({ 
 					
@@ -250,9 +288,8 @@ var locationSuccess = function(_position) {
 	});
 	
 	$("#claimBtn").removeAttr('disabled');
-	
  
-};
+}
 
 function init_geo(){
 	
@@ -300,11 +337,15 @@ function claim_location(choice, game){
 	
 	var json_string = JSON.stringify(game);
 	
-		$.post("http://www.jamesrwilliams.co.uk/hybrid/api.php?request=update_game", {data: json_string}, function(result){
+	$.post("http://www.jamesrwilliams.co.uk/hybrid/api.php?request=update_game", {data: json_string}, function(result){
        
+    	console.log(result);
+    
     });	
+    
+    
 	
-};
+}
 
 function initialise(_data){
 	
@@ -341,7 +382,6 @@ function initialise(_data){
 		
 		// Style the Maps with the colour scheme from above.
 		map.setOptions({styles: styles});
-		
 		
 		drawFences(51.888094, -2.091802, game);
 	

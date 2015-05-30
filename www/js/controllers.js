@@ -303,7 +303,7 @@ angular.module('starter.controllers', [])
 		.success(function(dataFromServer, status, headers, config){
 			
 			$scope.update();
-			$scope.claim.close();
+			// $scope.claim.close();
 		
 		});
 		
@@ -329,11 +329,27 @@ angular.module('starter.controllers', [])
 		$http.get('http://www.jamesrwilliams.co.uk/hybrid/api.php?request=fetch_game').then(function(resp) {
 			
 			// Response String needs sanitising from PHP to JSON
-			game = resp.data.replace(/\\"/g, '"');
+			game = resp.data;
+			
+			// Removes the escaped characters
+			game = game.replace(/\\"/g, '"');
+			
+			// Removes the qutoes
 			game = game.substring(1, game.length-1);
 			
-			// Initialise the game - see Lib.js
-			initialise(JSON.parse(game));
+			if(game.charAt(0) === '"' && game.charAt(game.length-1)){
+				
+				/* TODO - Remove Bug in PHP that adds quotes
+				 * when claiming outside the game grid */
+				
+				initialise(JSON.parse(game.substring(1, game.length-1)));
+				
+			}else{
+				
+				// Initialise the game - see Lib.js
+				initialise(JSON.parse(game));
+				
+			}
 			
 	
 		}, function(err) {
