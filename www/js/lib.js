@@ -1,33 +1,48 @@
-/*
- * The-Hybrid Companion - Lib.js
+/*	The-Hybrid Companion - Lib.js
  *
- * Sets the AngularJS states and modules used in the app. 
- * Allocating the controllers and templates forming the 
- * app's structure.
+ * 	Sets the AngularJS states and modules used in the app. 
+ * 	Allocating the controllers and templates forming the 
+ * 	app's structure.
  * 
- * @version		1.0
- * @package		com.wearekiwikiwi.hybrid
- * @description	Functions Library for The Hybrid Companion App			
- * @author 		James Williams (@James_RWilliams)
- * @copyright 	Copyright (c) 30/05/2015
+ *	@version		1.0
+ * 	@package		com.wearekiwikiwi.hybrid
+ * 	@description	Functions Library for The Hybrid Companion App			
+ * 	@author 		James Williams (@James_RWilliams)
+ * 	@copyright 		Copyright (c) 30/05/2015
+ *
+ * 	PS. 
+ *
+ *	There are a few "jshint ignore:line" lines in this file
+ *	they are used to suppress warnings from JSHint. This is done
+ *	as the functions here are called by the controllers and are
+ *	not refernced by this file very often.
  *
  */
- 
- var alert;
- 
- function login(){
+
+/* Global Variables (Yuck) */
+
+var alert, console, map, i, GMaps;
+var game = {};
+var position = {};
+var polygons = [];
+
+
+/**
+ *	Login()
+ * 
+ */		
+
+function login(){
 	 
-	 
-	 var _user = $(".login #username").val();
-	 var _pass = $(".login #password").val();
-	 
+	var _user = $(".login #username").val();
+	var _pass = $(".login #password").val();
+	
 	console.log("Username: " +  _user);
 	console.log("Password: " +  $.md5(_pass));
  	 
- }
+}
  
-/*
- * ========================================================================================================================
+/* =================================================================================================================
  * 
  * 		8888888888 8888888888 88888888888  .d8888b.  888    888       888       .d88888b.  8888888b.  8888888888 
  * 		888        888            888     d88P  Y88b 888    888       888      d88P" "Y88b 888   Y88b 888        
@@ -38,15 +53,15 @@
  * 		888        888            888     Y88b  d88P 888    888       888      Y88b. .d88P 888  T88b  888        
  * 		888        8888888888     888      "Y8888P"  888    888       88888888  "Y88888P"  888   T88b 8888888888
  *
- * ========================================================================================================================
- */
+ * ============================================================================================================== */
+
  
 /**
  * Renders the Lore Data from the server into the DOM
  * 
  */ 
  
-function drawLore(data){
+function drawLore(data){ // jshint ignore:line
 		
 	$.each(data, function(i, value){
 		
@@ -56,7 +71,14 @@ function drawLore(data){
 	 
 }
 
-function getLoreData(){
+/**
+ *	getLoreData()
+ * 
+ *	
+ *
+ */		
+
+function getLoreData(){ // jshint ignore:line
 	
 	$("#lore_output").text("Fetching Data");
 	
@@ -65,33 +87,37 @@ function getLoreData(){
 	request.open('GET', 'http://www.the-hybrid.co.uk/api.php?request=get_lore_posts', true);
 
 	request.onload = function() {
-	if (request.status >= 200 && request.status < 400) {
-   	
-		setData(JSON.parse(request.responseText));
-	
-	} else {
-	
-		$("#lore_output").text("Error Fetching Data");
-	
-	}
+		
+		if (request.status >= 200 && request.status < 400) {
+	   	
+			setData(JSON.parse(request.responseText));
+		
+		} else {
+		
+			$("#lore_output").text("Error Fetching Data");
+		
+		}
 
-};
+	};
 
-request.onerror = function() {
+	request.onerror = function() {
 
-	$("#lore_output").text("Error Connecting To Server");
+		$("#lore_output").text("Error Connecting To Server");
 
-};
+	};
 
-request.send();
+	request.send();
 	
 }
 
-function setData(input_data){
+/**
+ *	
+ * 
+ */		
+
+function setData(input_data){ // jshint ignore:line
 	
 	$(document).ready(function(){
-		
-		
 		
 		$("#lore_output").text(input_data);
 		
@@ -113,10 +139,17 @@ function setData(input_data){
  * 																	
  * ================================================================================================================ */                                                                                                          
 
-var game = new Object();
-var position = new Object();
-var map, i, output;
-var polygons = [];
+
+/**
+ *	drawHex
+ *
+ *	This function draws a hexagon from the given corrdinates and the size
+ *
+ *	@param width 	- Width specification of the hexagon.
+ *	@param lat		- Latitude origin point for hexagon.
+ *	@param lag		- Longitude origin point for the hexagon.
+ * 
+ */		
 
 function drawHex(width, lat, lng){
 	
@@ -136,22 +169,46 @@ function drawHex(width, lat, lng){
 	
 }
 
+/**
+ *	Utility Method for checking if the given values is a number
+ * 
+ */		
+
 function isNumber(n){
 	
    return n == parseFloat(n);
    
 }
+
+/**
+ *	Utility Method for checking if the given values is a number
+ * 
+ */		
+
+
 function isEven(n){
 	
    return isNumber(n) && (n % 2 === 0);
    
 }
 
+/**
+ *	Utility Method for checking if the given values is a number
+ * 
+ */		
+
+
 function isOdd(n){
 	
    return isNumber(n) && (Math.abs(n) % 2 === 1);
    
 }
+
+/**
+ *	Utility Method for checking if the given values is a number
+ * 
+ */		
+
 
 function locationError(){
 	
@@ -160,16 +217,18 @@ function locationError(){
 }
 
 /**
+ *	drawFences()
+ * 
  *	DrawFences maps out the polgons for the Geolocation Game: Infection
  *	
- *	@parameter Origin_lat	- The starting Latitude of the game grid
- *	@parameter Orgin_lang 	- The starting Longitude of the game grid
- *	@parameter game	   		- The game data object
+ *	@param Origin_lat	- The starting Latitude of the game grid
+ *	@param Orgin_lang 	- The starting Longitude of the game grid
+ *	@param game	   		- The game data object
  *
  *
- *	===================
- *	Function Overview
- *	===================
+ *	=====================
+ *	= Function Overview =
+ *	=====================
  *
  *	1. 	Setup Loop for the number of rows in the grid.
  *
@@ -271,6 +330,19 @@ function drawFences(origin_lat, origin_lng, game){
 	
 }
 
+/**
+ *	LocationSucess()
+ *
+ *	Call back function from init_geo() that confirms
+ *	the player location has been found. Then adds a
+ * 	google maps marker onto the users position.
+ *	
+ *	Once the location has been found the claim
+ *	button in the interface becomes active,
+ *	allowing players to claim territory.
+ * 
+ */		
+
 var locationSuccess = function(_position) {
 		
 	position = _position;	
@@ -279,18 +351,23 @@ var locationSuccess = function(_position) {
 	
 		lat: position.coords.latitude,
 		lng: position.coords.longitude,
-		title: 'You',
-		click: function(e) {
-			
-			output.innerHTML = output.innerHTML + "<p>This is your location</p>";
-		
-		}
+		title: 'You'
 	});
 	
 	$("#claimBtn").removeAttr('disabled');
  
-}
+};
 
+/**
+ *	Init_Geo()
+ *
+ *	This starts the geolcation game by fetching the 
+ *	location and then clears the markers. The callbacks
+ * 	within the getCurrentPosition are used to then 
+ *	procced based upon their values	
+ * 
+ */
+	
 function init_geo(){
 	
 	navigator.geolocation.getCurrentPosition(locationSuccess, locationError);
@@ -299,12 +376,44 @@ function init_geo(){
 	
 }
 
+/**
+ *	Claim_location()
+ *
+ *	@param choice 	- The id value from the UI Modal Button
+ *	@param game 	- The game data object.
+ *
+ *	=====================
+ *	= Function Overview =
+ *	=====================
+ *
+ *	This handles most of the logic for the claiming element of
+ *	the game.
+ *
+ *	1. 	Cycles Through the List of Polygons
+ *
+ *	2. 	Checks if the Player is within a polygon
+ *
+ *	3.	Checks the user's claim faction and sets the 
+ *		corrasponding data value to that species.
+ *
+ *	4.	Turns JS Object into JSON
+ *
+ *	5.	Sends JSON to server.
+ *
+ */	
+ 	
 function claim_location(choice, game){
+	
+	/* 1 */
 	
 	for(i = 0; i < polygons.length; i++){
 		
+		/* 2 */
+		
 		if(map.checkGeofence(position.coords.latitude, position.coords.longitude, polygons[i])){
-						
+			
+			/* 3 */
+			
 			if(choice == 1){
 				
 				// Set As Vampire
@@ -335,27 +444,59 @@ function claim_location(choice, game){
 		
 	}
 	
+	/* 4 */
+	
 	var json_string = JSON.stringify(game);
+	
+	/* 5 */
 	
 	$.post("http://www.jamesrwilliams.co.uk/hybrid/api.php?request=update_game", {data: json_string}, function(result){
        
     	console.log(result);
     
     });	
-    
-    
 	
 }
 
-function initialise(_data){
+/**
+ *	initialise()
+ *
+ *	"On to scene 24, which is a smashing scene with some lovley acting"
+ 
+ *	=====================
+ *	= Function Overview =
+ *	=====================
+ *
+ *	1.	Clears the game and poloyons objects
+ *
+ *	2.	Setup the Google Map API to the page using the
+ *		GMaps libary: https://hpneo.github.io/gmaps/documentation.html
+ *
+ *	3.	Set up the google map styles with an array from
+ *		https://snazzymaps.com/style/15/subtle-grayscale 
+ * 
+ *	4.	Begin drawing the game grid with the drawFences()
+ *		method.
+ *
+ *	5.	Then cycle through the grid styling it according
+ *		to its occupation variable in the game object.
+ *
+ *	6.	Once the grid is setup then begin fetching the
+ *		players location.
+ *
+ */		
+
+function initialise(_data){ // jshint ignore:line
 	
-	var game = _data; // Specifiy the passed object from the controller to the funtion.
+	/* 1 */
 	
-	polygons = []; // Reset the grid length so it replaces rather than appends to the data.
+	var game = _data;
+	polygons = []; 
 	
 	if("geolocation" in navigator) {
 	
-		// Draw Google Maps using GMAPS - Docs: https://hpneo.github.io/gmaps/documentation.html
+		/* 2 */
+	
 		map = new GMaps({
 			zoom: 17,
 			div: '#map-canvas',
@@ -364,7 +505,7 @@ function initialise(_data){
 			disableDefaultUI: true
 		});	
 		
-		// Google Maps API Styles from: https://snazzymaps.com/style/15/subtle-grayscale 
+		/* 3 */
 		
 		var styles = [
 		
@@ -380,15 +521,13 @@ function initialise(_data){
 		
 		];
 		
-		// Style the Maps with the colour scheme from above.
 		map.setOptions({styles: styles});
 		
+		/* 4 */
+		
 		drawFences(51.888094, -2.091802, game);
-	
-		/*
-		 * Style the Grid based on the settings in the game string. Chaning their colours etc.
-		 *
-		 */
+
+		/* 5 */
 	
 		for(i=0; i < polygons.length; i++){
 			
@@ -422,6 +561,8 @@ function initialise(_data){
 			}
 			
 		}
+		
+		/* 6 */
 		
 		init_geo();
 		

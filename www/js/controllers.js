@@ -96,8 +96,6 @@ angular.module('starter.controllers', [])
 
 .controller('PlayerCtrl', function($scope, $http, $ionicPopup, $state){
 	
-	
-	
 	$scope.playerRefresh = function(){
 		
 		$scope.getPlayerData();	
@@ -223,8 +221,6 @@ angular.module('starter.controllers', [])
 
 .controller('MapCtrl',function($scope, $ionicPopup, $timeout, $http){
 	
-	
-
 	$scope.claim = function(){ $scope.claimDialog(); };
 	
 	$scope.claimDialog = function(){
