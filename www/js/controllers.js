@@ -18,8 +18,11 @@ angular.module('starter.controllers', [])
 /**
  *	Settings Page Controller
  *
- *	1.	Fires a confirmation window for the user when they attempt to logout
- *	2.	On confirmation then removes the LocalStorage 	
+ *	1.	Fires a confirmation window for the 
+ *		user when they attempt to logout.
+ *
+ *	2.	On confirmation then removes the 
+ *		LocalStorage. 	
  *
  */
 
@@ -62,13 +65,32 @@ angular.module('starter.controllers', [])
 /**
  *	Lore Page Controller
  *
+ *	1.	Setting the doRefresh() function
+ *
+ *	2.	Setting a HTTP get request.
+ *
+ *	3.	Clear the div of the resutls and 
+ *		pass the data from the get request.
+ *
+ *	4.	Send the complete message to the 
+ *		scroll to reload element.
+ *
+ *	5.	Call function to fire on inital
+ *		page load.
+ *
  */
  
 .controller('AJAXCtrl', function($scope, $http) {
 	
+	/* 1 */
+	
 	$scope.doRefresh = function(){
 	
+		/* 2 */
+	
 		$http.get('http://www.the-hybrid.co.uk/api.php?request=get_lore_posts').then(function(resp) {
+	
+			/* 3 */
 	
 			$("#lore_output").text("");
 			drawLore(resp.data);
@@ -80,9 +102,13 @@ angular.module('starter.controllers', [])
 			
 		})
 		
+		/* 4 */
+		
 		$scope.$broadcast('scroll.refreshComplete');
 		
 	}
+	
+	/* 5 */
 	
 	$scope.doRefresh();
 	
@@ -90,11 +116,26 @@ angular.module('starter.controllers', [])
 })
 
 /**
- *	Players Page Controller	
+ *	Players Page Controller
+ *
+ *	1.	Declare the playerRefresh function that
+ *		that requests the player data and then
+ *		closes the refresh element.
+ *
+ *	2.	
  *
  */
 
 .controller('PlayerCtrl', function($scope, $http, $ionicPopup, $state){
+	
+	/**
+	 *	playerRefresh()
+	 *
+	 *	Calls the getPlayerData() function.	
+	 *	Then sends the pull-to-refresh element 
+	 *	a completion message.
+	 *	
+	 */		
 	
 	$scope.playerRefresh = function(){
 		
@@ -103,9 +144,15 @@ angular.module('starter.controllers', [])
 		
 	}
 	
+	/**
+	 *	getPlayerDate()
+	 *
+	 *	
+	 *	1.	Setup the dialog buttons for the 
+	 *		login prompt.
+	 */		
+	
 	$scope.getPlayerData = function(){
-		
-		var data = window.localStorage.getItem("the-hybrid_player");
 		
 		$scope.loginPrompt = function(){
 		
@@ -144,13 +191,12 @@ angular.module('starter.controllers', [])
 	  	
 	  	};
 
+	  	var data = window.localStorage.getItem("the-hybrid_player");
 		
 		if(data != null){
 			
 			data = JSON.parse(data);
-			
-			console.log(data);
-			
+						
 			$("#player_id").text("Player ID: " + data.player.player_id);
 			$("#player_xp").text("XP: " + data.player.xp.xp_general);
 			$("#player_health").text("HP: " + data.player.health);

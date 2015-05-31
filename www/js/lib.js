@@ -19,45 +19,20 @@
  *
  */
 
-/* Global Variables (Yuck) */
+/* Global Variables (...yuck) */
 
 var alert, console, map, i, GMaps;
 var game = {};
 var position = {};
 var polygons = [];
-
-
-/**
- *	Login()
- * 
- */		
-
-function login(){
-	 
-	var _user = $(".login #username").val();
-	var _pass = $(".login #password").val();
-	
-	console.log("Username: " +  _user);
-	console.log("Password: " +  $.md5(_pass));
- 	 
-}
  
-/* =================================================================================================================
- * 
- * 		8888888888 8888888888 88888888888  .d8888b.  888    888       888       .d88888b.  8888888b.  8888888888 
- * 		888        888            888     d88P  Y88b 888    888       888      d88P" "Y88b 888   Y88b 888        
- *  	888        888            888     888    888 888    888       888      888     888 888    888 888        
- * 		8888888    8888888        888     888        8888888888       888      888     888 888   d88P 8888888    
- *		888        888            888     888        888    888       888      888     888 8888888P"  888        
- * 		888        888            888     888    888 888    888       888      888     888 888 T88b   888        
- * 		888        888            888     Y88b  d88P 888    888       888      Y88b. .d88P 888  T88b  888        
- * 		888        8888888888     888      "Y8888P"  888    888       88888888  "Y88888P"  888   T88b 8888888888
+/**
+ *	drawLore()
+ *	
+ *	Renders the Lore Data from the server and inserts 
+ *	it into the DOM.
  *
- * ============================================================================================================== */
-
- 
-/**
- * Renders the Lore Data from the server into the DOM
+ *	@param data 	- Lore Data Object
  * 
  */ 
  
@@ -69,76 +44,7 @@ function drawLore(data){ // jshint ignore:line
 		
 	});
 	 
-}
-
-/**
- *	getLoreData()
- * 
- *	
- *
- */		
-
-function getLoreData(){ // jshint ignore:line
-	
-	$("#lore_output").text("Fetching Data");
-	
-	var request = new XMLHttpRequest();
-	
-	request.open('GET', 'http://www.the-hybrid.co.uk/api.php?request=get_lore_posts', true);
-
-	request.onload = function() {
-		
-		if (request.status >= 200 && request.status < 400) {
-	   	
-			setData(JSON.parse(request.responseText));
-		
-		} else {
-		
-			$("#lore_output").text("Error Fetching Data");
-		
-		}
-
-	};
-
-	request.onerror = function() {
-
-		$("#lore_output").text("Error Connecting To Server");
-
-	};
-
-	request.send();
-	
-}
-
-/**
- *	
- * 
- */		
-
-function setData(input_data){ // jshint ignore:line
-	
-	$(document).ready(function(){
-		
-		$("#lore_output").text(input_data);
-		
-	});
-	
-}
-
-
-/* ===================================================================================================================	
- * 	
- *  888888888888  88        88  88888888888        ,ad8888ba,          db         88b           d88  88888888888 
- *       88       88        88  88                d8"'    `"8b        d88b        888b         d888  88           
- *  	 88       88        88  88               d8'                 d8'`8b       88`8b       d8'88  88           
- *  	 88       88aaaaaaaa88  88aaaaa          88                 d8'  `8b      88 `8b     d8' 88  88aaaaa     
- *  	 88       88""""""""88  88"""""          88      88888     d8YaaaaY8b     88  `8b   d8'  88  88"""""      
- *  	 88       88        88  88               Y8,        88    d8""""""""8b    88   `8b d8'   88  88           
- *  	 88       88        88  88                Y8a.    .a88   d8'        `8b   88    `888'    88  88           
- *  	 88       88        88  88888888888        `"Y88888P"   d8'          `8b  88     `8'     88  88888888888
- * 																	
- * ================================================================================================================ */                                                                                                          
-
+}                                                                                                   
 
 /**
  *	drawHex
@@ -170,8 +76,13 @@ function drawHex(width, lat, lng){
 }
 
 /**
+ *	isNumber()	
+ *
  *	Utility Method for checking if the given values is a number
- * 
+ *	
+ *	@param 	string	- String to check if it is a number
+ *	@return bool 	- If the paramerter string a number
+ *
  */		
 
 function isNumber(n){
@@ -181,10 +92,14 @@ function isNumber(n){
 }
 
 /**
+ *	isEven()
+ *
  *	Utility Method for checking if the given values is a number
  * 
+ *	@param n		- The variable to check
+ *	@return bool 	- If the paramerter number is even 
+ *	
  */		
-
 
 function isEven(n){
 	
@@ -193,10 +108,14 @@ function isEven(n){
 }
 
 /**
+ *	isOdd()
+ *
  *	Utility Method for checking if the given values is a number
+ *
+ *	@param	n		- The variable to check
+ *	@return bool 	- If the paramerter number is odd 
  * 
  */		
-
 
 function isOdd(n){
 	
@@ -205,10 +124,11 @@ function isOdd(n){
 }
 
 /**
+ *	locationError()	
+ *
  *	Utility Method for checking if the given values is a number
  * 
  */		
-
 
 function locationError(){
 	
@@ -462,7 +382,7 @@ function claim_location(choice, game){
  *	initialise()
  *
  *	"On to scene 24, which is a smashing scene with some lovley acting"
- 
+ *
  *	=====================
  *	= Function Overview =
  *	=====================
