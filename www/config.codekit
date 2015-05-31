@@ -22,17 +22,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/congruent_outline.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 8425,
-		"inputAbbreviatedPath": "\/img\/congruent_outline.png",
-		"outputAbbreviatedPath": "\/img\/congruent_outline.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/img\/hero.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -163,17 +152,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/geoGame.json": {
-		"fileType": 524288,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/geoGame.json",
-		"orderOutput": 0,
-		"outputAbbreviatedPath": "\/js\/geoGame-min.json",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1
-		},
 	"\/js\/jquery-2.1.4.min.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -250,17 +228,6 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
-		},
-	"\/js\/player.json": {
-		"fileType": 524288,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/player.json",
-		"orderOutput": 0,
-		"outputAbbreviatedPath": "\/js\/player-min.json",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1
 		},
 	"\/lib\/ionic\/css\/ionic.css": {
 		"fileType": 16,
